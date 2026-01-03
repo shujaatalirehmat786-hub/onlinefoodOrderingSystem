@@ -1,0 +1,12 @@
+[00:00:01.978] Server  LOG      ✓ Ready in 1359ms
+[00:00:06.977] Server  LOG      ○ Compiling / ...
+[00:00:08.414] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:00:08.610] Browser LOG     %c[Vercel Web Analytics]%c Debug mode is enabled by default in development. No requests will be sent to the server. color: rgb(120, 120, 120) color: inherit
+[00:00:08.610] Browser LOG     %c[Vercel Web Analytics]%c Running queued event color: rgb(120, 120, 120) color: inherit pageview {"path":"/","route":"/"}
+[00:00:08.610] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/ color: rgb(120, 120, 120) color: inherit {"dp":"/","o":"http://localhost:3000/","r":"","sdkn":"@vercel/analytics/next","sdkv":"1.3.1","sv":"0.1.3","ts":1767382245601}
+[00:00:09.505] Server  LOG     [v0] API Proxy GET: "https://api.livedatanow.com/api/online-order/store/by-subdomain?hostname=flavors"
+[00:00:10.494] Server  LOG     [v0] API Proxy GET response: "{\"success\":true,\"data\":{\"_id\":\"678cf52ac89b647b112c98b6\",\"name\":\"Flavors Indian Kitchen\",\"address\":\"5459 N MacArthur Blvd, Irving, TX 75038\",\"logoId\":null,\"orderWebsiteId\":{\"_id\":\"682395d2dbd9b0294d27"
+[00:00:10.576] Server  LOG     [v0] API Proxy GET: "https://api.livedatanow.com/api/online-order/department?storeId=678cf52ac89b647b112c98b6&page=1&limit=50"
+[00:00:10.586] Server  LOG     [v0] API Proxy GET: "https://api.livedatanow.com/api/online-order/product?storeId=678cf52ac89b647b112c98b6&page=1&limit=100&order=desc"
+[00:00:10.766] Server  LOG     [v0] API Proxy GET response: "{\"success\":true,\"data\":[{\"_id\":\"67a4b163956da221c200d3f1\",\"name\":\"BREAKFAST\",\"storeId\":\"678cf52ac89b647b112c98b6\",\"createdAt\":\"2025-02-06T12:56:03.733Z\",\"__v\":0,\"description\":\"breakfast\"},{\"_id\":\"67a4"
+[00:00:12.184] Server  LOG     [v0] API Proxy GET response: "{\"products\":[{\"_id\":\"67a4b164956da221c200d5df\",\"name\":\"IDLY (3)\",\"price\":\"5.99\",\"priceAfterTax\":\"6.48\",\"priceYouCharge\":\"5.99\",\"tax\":\"8.25\",\"taxType\":\"direct\",\"description\":\"IDLY (3)\",\"stock\":-1394,\"s"
