@@ -122,3 +122,12 @@
     @apply bg-background text-foreground;
   }
 }
+
+/* Hide HOME and MENU navigation buttons in hero section only */
+/* Target the first section in main (hero section) but exclude header */
+main > section:first-of-type[class*="relative"] a[href="/"]:not(header a),
+main > section:first-of-type[class*="relative"] a[href="/categories"]:not(header a),
+main > section:first-of-type[class*="relative"] button[class*="bg-white"],
+main > section:first-of-type[class*="relative"] button[class*="bg-orange"] {
+  display: none !important;
+}

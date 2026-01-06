@@ -40,7 +40,6 @@ export function Header() {
           {/* Desktop Navigation Links */}
           <nav className="hidden items-center gap-6 md:flex">
             <Link href="/" className="text-sm font-medium text-gray-700 transition-colors hover:text-orange-600 dark:text-gray-300 dark:hover:text-orange-400">
-              <Home className="mr-1 inline h-4 w-4" />
               Home
             </Link>
             <Link href="/categories" className="text-sm font-medium text-gray-700 transition-colors hover:text-orange-600 dark:text-gray-300 dark:hover:text-orange-400">
@@ -56,10 +55,10 @@ export function Header() {
 
           <div className="flex shrink-0 items-center gap-2 sm:gap-3">
             {/* Phone Number - Desktop */}
-            <div className="hidden items-center gap-2 text-sm text-gray-700 dark:text-gray-300 md:flex">
+            <a href="tel:0947118058" className="hidden items-center gap-2 text-sm text-gray-700 dark:text-gray-300 md:flex">
               <Phone className="h-4 w-4 text-orange-600 dark:text-orange-400" />
               <span className="font-medium">094 711 80 58</span>
-            </div>
+            </a>
 
             {/* Cart */}
             <Link href="/cart">
@@ -169,10 +168,10 @@ export function Header() {
                 Contacts
               </Link>
               {/* Phone Number - Mobile */}
-              <div className="mt-2 flex items-center gap-2 rounded-lg px-3 py-2 text-sm text-gray-700 dark:text-gray-300">
+              <a href="tel:0947118058" className="mt-2 flex items-center gap-2 rounded-lg px-3 py-2 text-sm text-gray-700 dark:text-gray-300">
                 <Phone className="h-4 w-4 text-orange-600 dark:text-orange-400" />
                 <span className="font-medium">094 711 80 58</span>
-              </div>
+              </a>
               {/* Cart Total - Mobile */}
               {cart.totalItems > 0 && (
                 <div className="mt-2 rounded-lg px-3 py-2 text-sm font-semibold text-gray-900 dark:text-white">

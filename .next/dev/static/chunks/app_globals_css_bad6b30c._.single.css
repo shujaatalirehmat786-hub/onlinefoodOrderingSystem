@@ -826,10 +826,6 @@
     height: calc(var(--spacing) * 6);
   }
 
-  .h-7 {
-    height: calc(var(--spacing) * 7);
-  }
-
   .h-8 {
     height: calc(var(--spacing) * 8);
   }
@@ -844,10 +840,6 @@
 
   .h-12 {
     height: calc(var(--spacing) * 12);
-  }
-
-  .h-20 {
-    height: calc(var(--spacing) * 20);
   }
 
   .h-24 {
@@ -912,10 +904,6 @@
 
   .w-6 {
     width: calc(var(--spacing) * 6);
-  }
-
-  .w-7 {
-    width: calc(var(--spacing) * 7);
   }
 
   .w-8 {
@@ -1861,10 +1849,6 @@
 
   .text-muted-foreground {
     color: var(--muted-foreground);
-  }
-
-  .text-orange-400 {
-    color: var(--color-orange-400);
   }
 
   .text-orange-500 {
@@ -3554,6 +3538,10 @@
     --sidebar-border: lab(15.204% 0 0);
     --sidebar-ring: lab(34.924% 0 0);
   }
+}
+
+main > section:first-of-type[class*="relative"] a[href="/"]:not(header a), main > section:first-of-type[class*="relative"] a[href="/categories"]:not(header a), main > section:first-of-type[class*="relative"] button[class*="bg-white"], main > section:first-of-type[class*="relative"] button[class*="bg-orange"] {
+  display: none !important;
 }
 
 @property --tw-translate-x {

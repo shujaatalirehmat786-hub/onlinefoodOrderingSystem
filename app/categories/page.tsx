@@ -209,7 +209,6 @@ export default function CategoriesPage() {
                 >
                   HOME
                 </Link>
-                <span className="text-orange-400">MENU</span>
               </div>
               <div className="relative">
                 <div className="absolute inset-0 rounded-full border-4 border-white/30 blur-sm" />

@@ -128,6 +128,21 @@ function HomePageContent() {
       <main>
         {/* Hero Section */}
         <section className="relative min-h-[600px] overflow-hidden py-20">
+          {/* Hide HOME and MENU navigation buttons in hero section (not in header) */}
+          <style dangerouslySetInnerHTML={{__html: `
+            /* Hide navigation links in hero section only */
+            main > section:first-of-type.relative a[href="/"]:not(header a),
+            main > section:first-of-type.relative a[href="/categories"]:not(header a) {
+              display: none !important;
+            }
+            /* Hide any buttons with HOME or MENU text in hero section */
+            main > section:first-of-type.relative button[aria-label*="HOME"],
+            main > section:first-of-type.relative button[aria-label*="MENU"],
+            main > section:first-of-type.relative button[aria-label*="Home"],
+            main > section:first-of-type.relative button[aria-label*="Menu"] {
+              display: none !important;
+            }
+          `}} />
           {/* Background Image */}
           <div 
             className="absolute inset-0 bg-cover bg-center bg-no-repeat"
