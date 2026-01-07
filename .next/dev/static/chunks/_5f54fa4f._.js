@@ -3569,15 +3569,15 @@ function CategoriesPage() {
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("main", {
                 children: [
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("section", {
-                        className: "relative h-[400px] overflow-hidden",
+                        className: "relative h-[350px] overflow-hidden sm:h-[400px]",
                         children: [
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                                className: "absolute inset-0 bg-cover bg-center",
+                                className: "absolute inset-0 bg-cover bg-center bg-no-repeat",
                                 style: {
                                     backgroundImage: "url(https://images.unsplash.com/photo-1513104890138-7c749659a591?w=1920&h=1080&fit=crop)"
                                 },
                                 children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                                    className: "absolute inset-0 bg-black/60"
+                                    className: "absolute inset-0 bg-gradient-to-b from-black/70 via-black/60 to-black/70"
                                 }, void 0, false, {
                                     fileName: "[project]/app/categories/page.tsx",
                                     lineNumber: 206,
@@ -3589,66 +3589,136 @@ function CategoriesPage() {
                                 columnNumber: 11
                             }, this),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                                className: "absolute inset-0 z-0",
+                                children: [
+                                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                                        className: "absolute top-10 left-10 h-32 w-32 rounded-full border border-white/10 blur-2xl"
+                                    }, void 0, false, {
+                                        fileName: "[project]/app/categories/page.tsx",
+                                        lineNumber: 211,
+                                        columnNumber: 13
+                                    }, this),
+                                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                                        className: "absolute bottom-10 right-10 h-40 w-40 rounded-full border border-white/10 blur-2xl"
+                                    }, void 0, false, {
+                                        fileName: "[project]/app/categories/page.tsx",
+                                        lineNumber: 212,
+                                        columnNumber: 13
+                                    }, this)
+                                ]
+                            }, void 0, true, {
+                                fileName: "[project]/app/categories/page.tsx",
+                                lineNumber: 210,
+                                columnNumber: 11
+                            }, this),
+                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
                                 className: "relative z-10 flex h-full items-center justify-center",
                                 children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                                    className: "flex flex-col items-center",
+                                    className: "mx-auto max-w-4xl px-4 text-center",
                                     children: [
                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                                            className: "mb-8 flex items-center gap-6 text-sm font-semibold uppercase tracking-wider",
-                                            children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$client$2f$app$2d$dir$2f$link$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["default"], {
-                                                href: "/",
-                                                className: "text-white transition-opacity hover:opacity-80",
-                                                children: "HOME"
-                                            }, void 0, false, {
-                                                fileName: "[project]/app/categories/page.tsx",
-                                                lineNumber: 214,
-                                                columnNumber: 17
-                                            }, this)
-                                        }, void 0, false, {
-                                            fileName: "[project]/app/categories/page.tsx",
-                                            lineNumber: 213,
-                                            columnNumber: 15
-                                        }, this),
-                                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                                            className: "relative",
+                                            className: "mb-6 flex items-center justify-center gap-2 text-sm font-medium uppercase tracking-wider text-white/90",
                                             children: [
-                                                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                                                    className: "absolute inset-0 rounded-full border-4 border-white/30 blur-sm"
+                                                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$client$2f$app$2d$dir$2f$link$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["default"], {
+                                                    href: "/",
+                                                    className: "transition-colors hover:text-orange-400",
+                                                    children: "Home"
                                                 }, void 0, false, {
                                                     fileName: "[project]/app/categories/page.tsx",
-                                                    lineNumber: 222,
+                                                    lineNumber: 220,
                                                     columnNumber: 17
                                                 }, this),
-                                                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                                                    className: "relative rounded-full border-4 border-white/50 p-8",
-                                                    children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("h1", {
-                                                        className: "text-7xl font-bold text-white md:text-8xl lg:text-9xl",
-                                                        children: "MENU"
-                                                    }, void 0, false, {
-                                                        fileName: "[project]/app/categories/page.tsx",
-                                                        lineNumber: 224,
-                                                        columnNumber: 19
-                                                    }, this)
+                                                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
+                                                    className: "text-white/50",
+                                                    children: "/"
                                                 }, void 0, false, {
                                                     fileName: "[project]/app/categories/page.tsx",
-                                                    lineNumber: 223,
+                                                    lineNumber: 226,
+                                                    columnNumber: 17
+                                                }, this),
+                                                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
+                                                    className: "text-orange-400",
+                                                    children: "Menu"
+                                                }, void 0, false, {
+                                                    fileName: "[project]/app/categories/page.tsx",
+                                                    lineNumber: 227,
                                                     columnNumber: 17
                                                 }, this)
                                             ]
                                         }, void 0, true, {
                                             fileName: "[project]/app/categories/page.tsx",
-                                            lineNumber: 221,
+                                            lineNumber: 219,
+                                            columnNumber: 15
+                                        }, this),
+                                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                                            className: "mb-4 flex items-center justify-center gap-3",
+                                            children: [
+                                                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                                                    className: "h-px w-12 bg-gradient-to-r from-transparent to-orange-400 sm:w-20"
+                                                }, void 0, false, {
+                                                    fileName: "[project]/app/categories/page.tsx",
+                                                    lineNumber: 232,
+                                                    columnNumber: 17
+                                                }, this),
+                                                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("h1", {
+                                                    className: "text-4xl font-bold text-white sm:text-5xl md:text-6xl lg:text-7xl",
+                                                    children: "Our Menu"
+                                                }, void 0, false, {
+                                                    fileName: "[project]/app/categories/page.tsx",
+                                                    lineNumber: 233,
+                                                    columnNumber: 17
+                                                }, this),
+                                                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                                                    className: "h-px w-12 bg-gradient-to-l from-transparent to-orange-400 sm:w-20"
+                                                }, void 0, false, {
+                                                    fileName: "[project]/app/categories/page.tsx",
+                                                    lineNumber: 236,
+                                                    columnNumber: 17
+                                                }, this)
+                                            ]
+                                        }, void 0, true, {
+                                            fileName: "[project]/app/categories/page.tsx",
+                                            lineNumber: 231,
+                                            columnNumber: 15
+                                        }, this),
+                                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
+                                            className: "mx-auto max-w-2xl text-base text-white/90 sm:text-lg md:text-xl",
+                                            children: "Discover our delicious selection of dishes crafted with passion and quality ingredients"
+                                        }, void 0, false, {
+                                            fileName: "[project]/app/categories/page.tsx",
+                                            lineNumber: 240,
+                                            columnNumber: 15
+                                        }, this),
+                                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                                            className: "mt-8 flex justify-center",
+                                            children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                                                className: "rounded-full bg-orange-500/20 p-3 backdrop-blur-sm",
+                                                children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$utensils$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$export__default__as__Utensils$3e$__["Utensils"], {
+                                                    className: "h-6 w-6 text-orange-400 sm:h-8 sm:w-8"
+                                                }, void 0, false, {
+                                                    fileName: "[project]/app/categories/page.tsx",
+                                                    lineNumber: 247,
+                                                    columnNumber: 19
+                                                }, this)
+                                            }, void 0, false, {
+                                                fileName: "[project]/app/categories/page.tsx",
+                                                lineNumber: 246,
+                                                columnNumber: 17
+                                            }, this)
+                                        }, void 0, false, {
+                                            fileName: "[project]/app/categories/page.tsx",
+                                            lineNumber: 245,
                                             columnNumber: 15
                                         }, this)
                                     ]
                                 }, void 0, true, {
                                     fileName: "[project]/app/categories/page.tsx",
-                                    lineNumber: 212,
+                                    lineNumber: 217,
                                     columnNumber: 13
                                 }, this)
                             }, void 0, false, {
                                 fileName: "[project]/app/categories/page.tsx",
-                                lineNumber: 210,
+                                lineNumber: 216,
                                 columnNumber: 11
                             }, this)
                         ]
@@ -3668,7 +3738,7 @@ function CategoriesPage() {
                                         className: "mx-auto mb-4 h-12 w-12 text-muted-foreground"
                                     }, void 0, false, {
                                         fileName: "[project]/app/categories/page.tsx",
-                                        lineNumber: 238,
+                                        lineNumber: 259,
                                         columnNumber: 17
                                     }, this),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
@@ -3676,13 +3746,13 @@ function CategoriesPage() {
                                         children: "No categories found."
                                     }, void 0, false, {
                                         fileName: "[project]/app/categories/page.tsx",
-                                        lineNumber: 239,
+                                        lineNumber: 260,
                                         columnNumber: 17
                                     }, this)
                                 ]
                             }, void 0, true, {
                                 fileName: "[project]/app/categories/page.tsx",
-                                lineNumber: 237,
+                                lineNumber: 258,
                                 columnNumber: 15
                             }, this) : /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
                                 className: "flex items-center justify-center gap-4",
@@ -3695,7 +3765,7 @@ function CategoriesPage() {
                                                 children: "Category:"
                                             }, void 0, false, {
                                                 fileName: "[project]/app/categories/page.tsx",
-                                                lineNumber: 246,
+                                                lineNumber: 267,
                                                 columnNumber: 21
                                             }, this),
                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
@@ -3703,7 +3773,7 @@ function CategoriesPage() {
                                                 children: departments.find((d)=>d._id === selectedCategory)?.name.toUpperCase() || "SELECTED"
                                             }, void 0, false, {
                                                 fileName: "[project]/app/categories/page.tsx",
-                                                lineNumber: 247,
+                                                lineNumber: 268,
                                                 columnNumber: 21
                                             }, this),
                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$components$2f$ui$2f$button$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["Button"], {
@@ -3718,18 +3788,18 @@ function CategoriesPage() {
                                                     className: "h-4 w-4"
                                                 }, void 0, false, {
                                                     fileName: "[project]/app/categories/page.tsx",
-                                                    lineNumber: 259,
+                                                    lineNumber: 280,
                                                     columnNumber: 23
                                                 }, this)
                                             }, void 0, false, {
                                                 fileName: "[project]/app/categories/page.tsx",
-                                                lineNumber: 250,
+                                                lineNumber: 271,
                                                 columnNumber: 21
                                             }, this)
                                         ]
                                     }, void 0, true, {
                                         fileName: "[project]/app/categories/page.tsx",
-                                        lineNumber: 245,
+                                        lineNumber: 266,
                                         columnNumber: 19
                                     }, this),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$components$2f$ui$2f$button$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["Button"], {
@@ -3740,30 +3810,30 @@ function CategoriesPage() {
                                                 className: "mr-2 h-5 w-5"
                                             }, void 0, false, {
                                                 fileName: "[project]/app/categories/page.tsx",
-                                                lineNumber: 269,
+                                                lineNumber: 290,
                                                 columnNumber: 19
                                             }, this),
                                             selectedCategory ? "Change Category" : "Select Category"
                                         ]
                                     }, void 0, true, {
                                         fileName: "[project]/app/categories/page.tsx",
-                                        lineNumber: 265,
+                                        lineNumber: 286,
                                         columnNumber: 17
                                     }, this)
                                 ]
                             }, void 0, true, {
                                 fileName: "[project]/app/categories/page.tsx",
-                                lineNumber: 242,
+                                lineNumber: 263,
                                 columnNumber: 15
                             }, this)
                         }, void 0, false, {
                             fileName: "[project]/app/categories/page.tsx",
-                            lineNumber: 235,
+                            lineNumber: 256,
                             columnNumber: 11
                         }, this)
                     }, void 0, false, {
                         fileName: "[project]/app/categories/page.tsx",
-                        lineNumber: 234,
+                        lineNumber: 255,
                         columnNumber: 9
                     }, this),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$components$2f$ui$2f$dialog$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["Dialog"], {
@@ -3778,12 +3848,12 @@ function CategoriesPage() {
                                         children: "Select Category"
                                     }, void 0, false, {
                                         fileName: "[project]/app/categories/page.tsx",
-                                        lineNumber: 281,
+                                        lineNumber: 302,
                                         columnNumber: 15
                                     }, this)
                                 }, void 0, false, {
                                     fileName: "[project]/app/categories/page.tsx",
-                                    lineNumber: 280,
+                                    lineNumber: 301,
                                     columnNumber: 13
                                 }, this),
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -3801,7 +3871,7 @@ function CategoriesPage() {
                                                 children: "ALL"
                                             }, void 0, false, {
                                                 fileName: "[project]/app/categories/page.tsx",
-                                                lineNumber: 288,
+                                                lineNumber: 309,
                                                 columnNumber: 17
                                             }, this),
                                             departments.map((dept)=>/*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$components$2f$ui$2f$button$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["Button"], {
@@ -3810,29 +3880,29 @@ function CategoriesPage() {
                                                     children: dept.name.toUpperCase()
                                                 }, dept._id, false, {
                                                     fileName: "[project]/app/categories/page.tsx",
-                                                    lineNumber: 305,
+                                                    lineNumber: 326,
                                                     columnNumber: 19
                                                 }, this))
                                         ]
                                     }, void 0, true, {
                                         fileName: "[project]/app/categories/page.tsx",
-                                        lineNumber: 286,
+                                        lineNumber: 307,
                                         columnNumber: 15
                                     }, this)
                                 }, void 0, false, {
                                     fileName: "[project]/app/categories/page.tsx",
-                                    lineNumber: 285,
+                                    lineNumber: 306,
                                     columnNumber: 13
                                 }, this)
                             ]
                         }, void 0, true, {
                             fileName: "[project]/app/categories/page.tsx",
-                            lineNumber: 279,
+                            lineNumber: 300,
                             columnNumber: 11
                         }, this)
                     }, void 0, false, {
                         fileName: "[project]/app/categories/page.tsx",
-                        lineNumber: 278,
+                        lineNumber: 299,
                         columnNumber: 9
                     }, this),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("section", {
@@ -3849,7 +3919,7 @@ function CategoriesPage() {
                                             children: selectedCategory ? departments.find((d)=>d._id === selectedCategory)?.name?.toUpperCase() || "PRODUCTS" : "ALL PRODUCTS"
                                         }, void 0, false, {
                                             fileName: "[project]/app/categories/page.tsx",
-                                            lineNumber: 326,
+                                            lineNumber: 347,
                                             columnNumber: 15
                                         }, this),
                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
@@ -3857,7 +3927,7 @@ function CategoriesPage() {
                                             children: selectedCategory ? "Category Products" : "Clients' Most Popular Choice"
                                         }, void 0, false, {
                                             fileName: "[project]/app/categories/page.tsx",
-                                            lineNumber: 329,
+                                            lineNumber: 350,
                                             columnNumber: 15
                                         }, this),
                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
@@ -3876,19 +3946,19 @@ function CategoriesPage() {
                                                     ]
                                                 }, void 0, true, {
                                                     fileName: "[project]/app/categories/page.tsx",
-                                                    lineNumber: 335,
+                                                    lineNumber: 356,
                                                     columnNumber: 19
                                                 }, this)
                                             ]
                                         }, void 0, true, {
                                             fileName: "[project]/app/categories/page.tsx",
-                                            lineNumber: 332,
+                                            lineNumber: 353,
                                             columnNumber: 15
                                         }, this)
                                     ]
                                 }, void 0, true, {
                                     fileName: "[project]/app/categories/page.tsx",
-                                    lineNumber: 325,
+                                    lineNumber: 346,
                                     columnNumber: 13
                                 }, this),
                                 loading ? /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -3897,12 +3967,12 @@ function CategoriesPage() {
                                         className: "h-8 w-8 animate-spin text-primary"
                                     }, void 0, false, {
                                         fileName: "[project]/app/categories/page.tsx",
-                                        lineNumber: 344,
+                                        lineNumber: 365,
                                         columnNumber: 17
                                     }, this)
                                 }, void 0, false, {
                                     fileName: "[project]/app/categories/page.tsx",
-                                    lineNumber: 343,
+                                    lineNumber: 364,
                                     columnNumber: 15
                                 }, this) : paginatedProducts.length > 0 ? /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["Fragment"], {
                                     children: [
@@ -3913,12 +3983,12 @@ function CategoriesPage() {
                                                     onAddToCart: handleAddToCart
                                                 }, product._id, false, {
                                                     fileName: "[project]/app/categories/page.tsx",
-                                                    lineNumber: 350,
+                                                    lineNumber: 371,
                                                     columnNumber: 21
                                                 }, this))
                                         }, void 0, false, {
                                             fileName: "[project]/app/categories/page.tsx",
-                                            lineNumber: 348,
+                                            lineNumber: 369,
                                             columnNumber: 17
                                         }, this),
                                         totalPages > 1 && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -3934,12 +4004,12 @@ function CategoriesPage() {
                                                         className: "h-4 w-4"
                                                     }, void 0, false, {
                                                         fileName: "[project]/app/categories/page.tsx",
-                                                        lineNumber: 364,
+                                                        lineNumber: 385,
                                                         columnNumber: 23
                                                     }, this)
                                                 }, void 0, false, {
                                                     fileName: "[project]/app/categories/page.tsx",
-                                                    lineNumber: 357,
+                                                    lineNumber: 378,
                                                     columnNumber: 21
                                                 }, this),
                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -3956,7 +4026,7 @@ function CategoriesPage() {
                                                                 children: page
                                                             }, page, false, {
                                                                 fileName: "[project]/app/categories/page.tsx",
-                                                                lineNumber: 377,
+                                                                lineNumber: 398,
                                                                 columnNumber: 29
                                                             }, this);
                                                         } else if (page === currentPage - 2 || page === currentPage + 2) {
@@ -3965,7 +4035,7 @@ function CategoriesPage() {
                                                                 children: "..."
                                                             }, page, false, {
                                                                 fileName: "[project]/app/categories/page.tsx",
-                                                                lineNumber: 391,
+                                                                lineNumber: 412,
                                                                 columnNumber: 34
                                                             }, this);
                                                         }
@@ -3973,7 +4043,7 @@ function CategoriesPage() {
                                                     })
                                                 }, void 0, false, {
                                                     fileName: "[project]/app/categories/page.tsx",
-                                                    lineNumber: 368,
+                                                    lineNumber: 389,
                                                     columnNumber: 21
                                                 }, this),
                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$components$2f$ui$2f$button$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["Button"], {
@@ -3986,18 +4056,18 @@ function CategoriesPage() {
                                                         className: "h-4 w-4"
                                                     }, void 0, false, {
                                                         fileName: "[project]/app/categories/page.tsx",
-                                                        lineNumber: 404,
+                                                        lineNumber: 425,
                                                         columnNumber: 23
                                                     }, this)
                                                 }, void 0, false, {
                                                     fileName: "[project]/app/categories/page.tsx",
-                                                    lineNumber: 397,
+                                                    lineNumber: 418,
                                                     columnNumber: 21
                                                 }, this)
                                             ]
                                         }, void 0, true, {
                                             fileName: "[project]/app/categories/page.tsx",
-                                            lineNumber: 356,
+                                            lineNumber: 377,
                                             columnNumber: 19
                                         }, this),
                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -4010,7 +4080,7 @@ function CategoriesPage() {
                                             ]
                                         }, void 0, true, {
                                             fileName: "[project]/app/categories/page.tsx",
-                                            lineNumber: 410,
+                                            lineNumber: 431,
                                             columnNumber: 17
                                         }, this)
                                     ]
@@ -4021,7 +4091,7 @@ function CategoriesPage() {
                                             className: "mx-auto mb-4 h-12 w-12 text-muted-foreground"
                                         }, void 0, false, {
                                             fileName: "[project]/app/categories/page.tsx",
-                                            lineNumber: 416,
+                                            lineNumber: 437,
                                             columnNumber: 17
                                         }, this),
                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
@@ -4029,24 +4099,24 @@ function CategoriesPage() {
                                             children: "No products found."
                                         }, void 0, false, {
                                             fileName: "[project]/app/categories/page.tsx",
-                                            lineNumber: 417,
+                                            lineNumber: 438,
                                             columnNumber: 17
                                         }, this)
                                     ]
                                 }, void 0, true, {
                                     fileName: "[project]/app/categories/page.tsx",
-                                    lineNumber: 415,
+                                    lineNumber: 436,
                                     columnNumber: 15
                                 }, this)
                             ]
                         }, void 0, true, {
                             fileName: "[project]/app/categories/page.tsx",
-                            lineNumber: 324,
+                            lineNumber: 345,
                             columnNumber: 11
                         }, this)
                     }, void 0, false, {
                         fileName: "[project]/app/categories/page.tsx",
-                        lineNumber: 323,
+                        lineNumber: 344,
                         columnNumber: 9
                     }, this)
                 ]
@@ -4057,7 +4127,7 @@ function CategoriesPage() {
             }, this),
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$components$2f$footer$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["Footer"], {}, void 0, false, {
                 fileName: "[project]/app/categories/page.tsx",
-                lineNumber: 424,
+                lineNumber: 445,
                 columnNumber: 7
             }, this)
         ]

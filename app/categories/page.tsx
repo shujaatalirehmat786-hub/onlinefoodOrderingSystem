@@ -195,35 +195,56 @@ export default function CategoriesPage() {
 
       <main>
         {/* Hero Section with Menu Text */}
-        <section className="relative h-[400px] overflow-hidden">
+        <section className="relative h-[350px] overflow-hidden sm:h-[400px]">
           {/* Background Image */}
           <div 
-            className="absolute inset-0 bg-cover bg-center"
+            className="absolute inset-0 bg-cover bg-center bg-no-repeat"
             style={{
               backgroundImage: "url(https://images.unsplash.com/photo-1513104890138-7c749659a591?w=1920&h=1080&fit=crop)",
             }}
           >
-            <div className="absolute inset-0 bg-black/60" />
+            <div className="absolute inset-0 bg-gradient-to-b from-black/70 via-black/60 to-black/70" />
+          </div>
+          
+          {/* Decorative Elements */}
+          <div className="absolute inset-0 z-0">
+            <div className="absolute top-10 left-10 h-32 w-32 rounded-full border border-white/10 blur-2xl" />
+            <div className="absolute bottom-10 right-10 h-40 w-40 rounded-full border border-white/10 blur-2xl" />
           </div>
           
           {/* Content */}
           <div className="relative z-10 flex h-full items-center justify-center">
-            {/* Semi-transparent white circular outline with MENU text */}
-            <div className="flex flex-col items-center">
-              <div className="mb-8 flex items-center gap-6 text-sm font-semibold uppercase tracking-wider">
+            <div className="mx-auto max-w-4xl px-4 text-center">
+              {/* Breadcrumb */}
+              <div className="mb-6 flex items-center justify-center gap-2 text-sm font-medium uppercase tracking-wider text-white/90">
                 <Link 
                   href="/" 
-                  className="text-white transition-opacity hover:opacity-80"
+                  className="transition-colors hover:text-orange-400"
                 >
-                  HOME
+                  Home
                 </Link>
+                <span className="text-white/50">/</span>
+                <span className="text-orange-400">Menu</span>
               </div>
-              <div className="relative">
-                <div className="absolute inset-0 rounded-full border-4 border-white/30 blur-sm" />
-                <div className="relative rounded-full border-4 border-white/50 p-8">
-                  <h1 className="text-7xl font-bold text-white md:text-8xl lg:text-9xl">
-                    MENU
-                  </h1>
+              
+              {/* Main Title */}
+              <div className="mb-4 flex items-center justify-center gap-3">
+                <div className="h-px w-12 bg-gradient-to-r from-transparent to-orange-400 sm:w-20" />
+                <h1 className="text-4xl font-bold text-white sm:text-5xl md:text-6xl lg:text-7xl">
+                  Our Menu
+                </h1>
+                <div className="h-px w-12 bg-gradient-to-l from-transparent to-orange-400 sm:w-20" />
+              </div>
+              
+              {/* Subtitle */}
+              <p className="mx-auto max-w-2xl text-base text-white/90 sm:text-lg md:text-xl">
+                Discover our delicious selection of dishes crafted with passion and quality ingredients
+              </p>
+              
+              {/* Decorative Icon */}
+              <div className="mt-8 flex justify-center">
+                <div className="rounded-full bg-orange-500/20 p-3 backdrop-blur-sm">
+                  <Utensils className="h-6 w-6 text-orange-400 sm:h-8 sm:w-8" />
                 </div>
               </div>
             </div>
