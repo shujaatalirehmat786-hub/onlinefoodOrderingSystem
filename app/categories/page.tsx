@@ -8,9 +8,15 @@ import { api } from "@/lib/api"
 import { getStoreFromSubdomain } from "@/lib/store"
 import { useCart } from "@/hooks/use-cart"
 import { useToast } from "@/hooks/use-toast"
-import { Loader2, Utensils, ChevronLeft, ChevronRight } from "lucide-react"
+import { Loader2, Utensils, ChevronLeft, ChevronRight, Menu, X } from "lucide-react"
 import { Card } from "@/components/ui/card"
 import { Button } from "@/components/ui/button"
+import {
+  Dialog,
+  DialogContent,
+  DialogHeader,
+  DialogTitle,
+} from "@/components/ui/dialog"
 import Link from "next/link"
 import { useRouter } from "next/navigation"
 
@@ -23,6 +29,7 @@ export default function CategoriesPage() {
   const [loading, setLoading] = useState(true)
   const [selectedCategory, setSelectedCategory] = useState<string>("")
   const [currentPage, setCurrentPage] = useState(1)
+  const [categoryMenuOpen, setCategoryMenuOpen] = useState(false)
   const router = useRouter()
   const { addToCart } = useCart()
   const { toast } = useToast()
@@ -92,6 +99,7 @@ export default function CategoriesPage() {
   const handleCategoryClick = (departmentId: string) => {
     setSelectedCategory(departmentId === selectedCategory ? "" : departmentId)
     setCurrentPage(1) // Reset to first page when category changes
+    setCategoryMenuOpen(false) // Close the menu after selection
   }
 
   const handleAddToCart = (product: any) => {
@@ -222,8 +230,8 @@ export default function CategoriesPage() {
           </div>
         </section>
 
-        {/* Category Buttons Section - Right after hero */}
-        <section className="bg-white py-8 dark:bg-gray-900">
+        {/* Category Menu Section - Right after hero */}
+        <section className="bg-white py-6 dark:bg-gray-900">
           <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
             {departments.length === 0 ? (
               <div className="py-12 text-center">
@@ -231,17 +239,62 @@ export default function CategoriesPage() {
                 <p className="text-muted-foreground">No categories found.</p>
               </div>
             ) : (
-              <div className="flex flex-wrap items-center justify-center gap-3">
+              <div className="flex items-center justify-center gap-4">
+                {/* Selected Category Display */}
+                {selectedCategory && (
+                  <div className="flex items-center gap-2">
+                    <span className="text-sm text-gray-600 dark:text-gray-400">Category:</span>
+                    <span className="rounded-full bg-orange-500 px-4 py-2 text-sm font-semibold text-white">
+                      {departments.find((d) => d._id === selectedCategory)?.name.toUpperCase() || "SELECTED"}
+                    </span>
+                    <Button
+                      variant="ghost"
+                      size="sm"
+                      onClick={() => {
+                        setSelectedCategory("")
+                        setCurrentPage(1)
+                      }}
+                      className="h-8 w-8 rounded-full p-0 hover:bg-gray-100 dark:hover:bg-gray-800"
+                    >
+                      <X className="h-4 w-4" />
+                    </Button>
+                  </div>
+                )}
+                
+                {/* Hamburger Menu Button */}
+                <Button
+                  onClick={() => setCategoryMenuOpen(true)}
+                  className="rounded-full bg-orange-500 px-6 py-3 text-sm font-semibold text-white shadow-lg transition-all hover:bg-orange-600 dark:bg-orange-500 dark:hover:bg-orange-600"
+                >
+                  <Menu className="mr-2 h-5 w-5" />
+                  {selectedCategory ? "Change Category" : "Select Category"}
+                </Button>
+              </div>
+            )}
+          </div>
+        </section>
+
+        {/* Category Selection Dialog */}
+        <Dialog open={categoryMenuOpen} onOpenChange={setCategoryMenuOpen}>
+          <DialogContent className="max-h-[80vh] max-w-2xl overflow-hidden">
+            <DialogHeader>
+              <DialogTitle className="text-2xl font-bold text-gray-900 dark:text-white">
+                Select Category
+              </DialogTitle>
+            </DialogHeader>
+            <div className="mt-4 max-h-[60vh] overflow-y-auto">
+              <div className="space-y-2">
                 {/* All Button */}
                 <Button
                   onClick={() => {
                     setSelectedCategory("")
                     setCurrentPage(1)
+                    setCategoryMenuOpen(false)
                   }}
-                  className={`rounded-full px-6 py-3 text-sm font-semibold uppercase transition-all ${
+                  className={`w-full justify-start rounded-lg px-4 py-3 text-left text-sm font-semibold uppercase transition-all ${
                     selectedCategory === ""
                       ? "bg-orange-500 text-white shadow-lg hover:bg-orange-600 dark:bg-orange-500"
-                      : "bg-orange-400 text-white hover:bg-orange-500 dark:bg-orange-400"
+                      : "bg-gray-100 text-gray-700 hover:bg-gray-200 dark:bg-gray-800 dark:text-gray-300 dark:hover:bg-gray-700"
                   }`}
                 >
                   ALL
@@ -252,19 +305,19 @@ export default function CategoriesPage() {
                   <Button
                     key={dept._id}
                     onClick={() => handleCategoryClick(dept._id)}
-                    className={`rounded-full px-6 py-3 text-sm font-semibold uppercase transition-all ${
+                    className={`w-full justify-start rounded-lg px-4 py-3 text-left text-sm font-semibold uppercase transition-all ${
                       selectedCategory === dept._id
                         ? "bg-orange-500 text-white shadow-lg hover:bg-orange-600 dark:bg-orange-500"
-                        : "bg-orange-400 text-white hover:bg-orange-500 dark:bg-orange-400"
+                        : "bg-gray-100 text-gray-700 hover:bg-gray-200 dark:bg-gray-800 dark:text-gray-300 dark:hover:bg-gray-700"
                     }`}
                   >
                     {dept.name.toUpperCase()}
                   </Button>
                 ))}
               </div>
-            )}
-          </div>
-        </section>
+            </div>
+          </DialogContent>
+        </Dialog>
 
         {/* Products Section with Pagination */}
         <section id="products-section" className="bg-gray-50 py-12 dark:bg-gray-800">
