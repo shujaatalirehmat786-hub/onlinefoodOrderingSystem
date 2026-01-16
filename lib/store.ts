@@ -19,13 +19,25 @@ const MOCK_STORE: Store = {
   description: "Delicious food delivered to your door",
 }
 
+export function getStoreSlug(): string {
+  if (typeof window === "undefined") {
+    return "savera"
+  }
+
+  const hostname = window.location.hostname
+  if (!hostname || hostname === "localhost" || /^\d{1,3}(\.\d{1,3}){3}$/.test(hostname)) {
+    return "savera"
+  }
+
+  const parts = hostname.split(".")
+  const subdomain = parts[0]
+  return subdomain || "savera"
+}
+
 export async function getStoreFromSubdomain(): Promise<Store | null> {
   try {
     if (typeof window !== "undefined") {
-      const hostname = window.location.hostname
-
-      // Extract subdomain - for v0 preview, just use "flavors" as default
-      const subdomain = "flavors"
+      const subdomain = getStoreSlug()
 
       try {
         const response = await api.store.getBySubdomain(subdomain)

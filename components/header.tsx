@@ -1,6 +1,6 @@
 "use client"
 
-import { useState } from "react"
+import { useEffect, useState } from "react"
 import Link from "next/link"
 import { Button } from "@/components/ui/button"
 import {
@@ -21,6 +21,11 @@ export function Header() {
   const { cart } = useCart()
   const [authDialogOpen, setAuthDialogOpen] = useState(false)
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
+  const [mounted, setMounted] = useState(false)
+
+  useEffect(() => {
+    setMounted(true)
+  }, [])
 
   return (
     <>
@@ -62,9 +67,14 @@ export function Header() {
 
             {/* Cart */}
             <Link href="/cart">
-              <Button variant="ghost" size="icon" className="relative h-9 w-9 sm:h-10 sm:w-10">
+              <Button
+                variant="ghost"
+                size="icon"
+                className="relative h-9 w-9 sm:h-10 sm:w-10"
+                aria-label="View cart"
+              >
                 <ShoppingCart className="h-4 w-4 sm:h-5 sm:w-5" />
-                {cart.totalItems > 0 && (
+                {mounted && cart.totalItems > 0 && (
                   <span className="absolute -right-1 -top-1 flex h-4 w-4 items-center justify-center rounded-full bg-orange-600 text-[10px] font-semibold text-white dark:bg-orange-500 sm:h-5 sm:w-5 sm:text-xs">
                     {cart.totalItems}
                   </span>
@@ -73,17 +83,22 @@ export function Header() {
             </Link>
 
             {/* Cart Total - Desktop */}
-            {cart.totalItems > 0 && (
+            {mounted && cart.totalItems > 0 && (
               <div className="hidden text-sm font-semibold text-gray-900 dark:text-white md:block">
                 ${Number(cart.finalTotal).toFixed(2)}
               </div>
             )}
 
             {/* User Menu */}
-            {isAuthenticated ? (
+            {mounted && isAuthenticated ? (
               <DropdownMenu>
                 <DropdownMenuTrigger asChild>
-                  <Button variant="ghost" size="icon" className="h-9 w-9 sm:h-10 sm:w-10">
+                  <Button
+                    variant="ghost"
+                    size="icon"
+                    className="h-9 w-9 sm:h-10 sm:w-10"
+                    aria-label="User menu"
+                  >
                     <User className="h-4 w-4 sm:h-5 sm:w-5" />
                   </Button>
                 </DropdownMenuTrigger>
@@ -99,6 +114,12 @@ export function Header() {
                     <Link href="/orders" className="w-full cursor-pointer">
                       <History className="mr-2 h-4 w-4" />
                       Order History
+                    </Link>
+                  </DropdownMenuItem>
+                  <DropdownMenuItem asChild>
+                    <Link href="/profile" className="w-full cursor-pointer">
+                      <User className="mr-2 h-4 w-4" />
+                      My Profile
                     </Link>
                   </DropdownMenuItem>
                   <DropdownMenuSeparator />

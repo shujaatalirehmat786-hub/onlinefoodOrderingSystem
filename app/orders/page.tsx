@@ -127,7 +127,7 @@ export default function OrdersPage() {
 
                     {/* Order Items */}
                     <div className="space-y-2">
-                      {order.orderItems.map((item, index) => (
+                      {(order.orderItems || []).map((item, index) => (
                         <div key={index} className="flex items-start justify-between text-sm">
                           <div className="flex-1">
                             <p>
@@ -137,7 +137,7 @@ export default function OrdersPage() {
                               <p className="text-muted-foreground">{item.modifiers.map((m) => m.name).join(", ")}</p>
                             )}
                           </div>
-                          <p className="font-medium">${item.subTotal.toFixed(2)}</p>
+                          <p className="font-medium">${Number(item.subTotal || 0).toFixed(2)}</p>
                         </div>
                       ))}
                     </div>
@@ -158,15 +158,15 @@ export default function OrdersPage() {
                   <div className="flex flex-col items-end gap-2 lg:min-w-[160px]">
                     <div className="text-right">
                       <p className="text-sm text-muted-foreground">Subtotal</p>
-                      <p className="font-medium">${order.subTotal.toFixed(2)}</p>
+                      <p className="font-medium">${Number(order.subTotal || 0).toFixed(2)}</p>
                     </div>
                     <div className="text-right">
                       <p className="text-sm text-muted-foreground">Tax</p>
-                      <p className="font-medium">${order.totalTax.toFixed(2)}</p>
+                      <p className="font-medium">${Number(order.totalTax || 0).toFixed(2)}</p>
                     </div>
                     <div className="mt-2 border-t border-border pt-2 text-right">
                       <p className="text-sm text-muted-foreground">Total</p>
-                      <p className="text-xl font-bold text-primary">${order.finalTotal.toFixed(2)}</p>
+                      <p className="text-xl font-bold text-primary">${Number(order.finalTotal || 0).toFixed(2)}</p>
                     </div>
                   </div>
                 </div>

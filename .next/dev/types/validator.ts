@@ -119,6 +119,42 @@ type RouteHandlerConfig<Route extends AppRouteHandlerRoutes = AppRouteHandlerRou
   type __Unused = __Check
 }
 
+// Validate ../../../app/profile/page.tsx
+{
+  type __IsExpected<Specific extends AppPageConfig<"/profile">> = Specific
+  const handler = {} as typeof import("../../../app/profile/page.js")
+  type __Check = __IsExpected<typeof handler>
+  // @ts-ignore
+  type __Unused = __Check
+}
+
+// Validate ../../../app/api/my-orders/route.ts
+{
+  type __IsExpected<Specific extends RouteHandlerConfig<"/api/my-orders">> = Specific
+  const handler = {} as typeof import("../../../app/api/my-orders/route.js")
+  type __Check = __IsExpected<typeof handler>
+  // @ts-ignore
+  type __Unused = __Check
+}
+
+// Validate ../../../app/api/online-order/[...path]/route.ts
+{
+  type __IsExpected<Specific extends RouteHandlerConfig<"/api/online-order/[...path]">> = Specific
+  const handler = {} as typeof import("../../../app/api/online-order/[...path]/route.js")
+  type __Check = __IsExpected<typeof handler>
+  // @ts-ignore
+  type __Unused = __Check
+}
+
+// Validate ../../../app/api/payment/acquire-api-key/route.ts
+{
+  type __IsExpected<Specific extends RouteHandlerConfig<"/api/payment/acquire-api-key">> = Specific
+  const handler = {} as typeof import("../../../app/api/payment/acquire-api-key/route.js")
+  type __Check = __IsExpected<typeof handler>
+  // @ts-ignore
+  type __Unused = __Check
+}
+
 // Validate ../../../app/api/proxy/[...path]/route.ts
 {
   type __IsExpected<Specific extends RouteHandlerConfig<"/api/proxy/[...path]">> = Specific

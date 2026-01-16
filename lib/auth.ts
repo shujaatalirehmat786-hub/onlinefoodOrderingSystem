@@ -7,8 +7,13 @@ export interface User {
   _id: string
   firstName?: string
   lastName?: string
+  companyName?: string
   email?: string
   phone: string
+  address?: string
+  city?: string
+  state?: string
+  country?: string
   storeId?: string
 }
 

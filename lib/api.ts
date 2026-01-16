@@ -51,21 +51,38 @@ async function apiRequest<T>(endpoint: string, options: RequestInit = {}): Promi
 export const api = {
   // Auth endpoints
   auth: {
-    login: (phone: string) =>
+    login: (phone: string, store: string) =>
       apiRequest<{ token: string; user: any }>("/auth/login", {
         method: "POST",
-        body: JSON.stringify({ phone }),
+        body: JSON.stringify({ phone, store }),
+      }),
+    verifyOtp: (phone: string, otp: string, store: string) =>
+      apiRequest<{ token: string; user: any }>("/auth/verify-otp", {
+        method: "POST",
+        body: JSON.stringify({ phone, otp, store }),
       }),
   },
 
   // Profile endpoints
   profile: {
     get: () => apiRequest<any>("/profile"),
-    update: (data: any) =>
-      apiRequest<any>("/profile", {
-        method: "PUT",
-        body: JSON.stringify(data),
-      }),
+    update: async (data: any) => {
+      try {
+        return await apiRequest<any>("/profile", {
+          method: "POST",
+          body: JSON.stringify(data),
+        })
+      } catch (error: any) {
+        const message = String(error?.message || "")
+        if (message.includes("Cannot POST") || message.includes("Not Found")) {
+          return apiRequest<any>("/profile", {
+            method: "PUT",
+            body: JSON.stringify(data),
+          })
+        }
+        throw error
+      }
+    },
   },
 
   // Store endpoints
@@ -127,5 +144,63 @@ export const api = {
         body: JSON.stringify(orderData),
       }),
     getMyOrders: (page = 1, limit = 50) => apiRequest<any>(`/order/my-orders?page=${page}&limit=${limit}`),
+  },
+
+  // Payment endpoints
+  payment: {
+    makePayment: async (params: { amount: number; paymentMethod: string; orderId: string; status: string }) => {
+      const token = getAuthToken()
+      const headers: HeadersInit = {
+        "Content-Type": "application/json",
+      }
+      if (token) {
+        headers["Authorization"] = `Bearer ${token}`
+      }
+
+      const parseError = async (response: Response) => {
+        const errorText = await response.text()
+        try {
+          const errorData = JSON.parse(errorText) as { error?: string; message?: string }
+          return errorData.error || errorData.message || errorText
+        } catch {
+          return errorText || `API Error: ${response.statusText}`
+        }
+      }
+
+      const postResponse = await fetch("/api/online-order/payment/make-payment", {
+        method: "POST",
+        headers,
+        body: JSON.stringify(params),
+      })
+
+      if (postResponse.ok) {
+        return postResponse.json()
+      }
+
+      const postError = await parseError(postResponse)
+      const shouldFallbackToGet = postResponse.status === 404 || postError.includes("Cannot POST")
+
+      if (!shouldFallbackToGet) {
+        throw new Error(postError)
+      }
+
+      const queryParams = new URLSearchParams()
+      queryParams.append("amount", params.amount.toString())
+      queryParams.append("paymentMethod", params.paymentMethod)
+      queryParams.append("orderId", params.orderId)
+      queryParams.append("status", params.status)
+
+      const getResponse = await fetch(`/api/online-order/payment/make-payment?${queryParams.toString()}`, {
+        method: "GET",
+        headers,
+      })
+
+      if (!getResponse.ok) {
+        const getError = await parseError(getResponse)
+        throw new Error(getError)
+      }
+
+      return getResponse.json()
+    },
   },
 }

@@ -11,6 +11,7 @@ import { useToast } from "@/hooks/use-toast"
 import { Loader2, Clock, Star, TrendingUp, Utensils, MapPin, Phone, ShoppingBag, CheckCircle2, Truck, Shield, Heart } from "lucide-react"
 import { Button } from "@/components/ui/button"
 import { Card } from "@/components/ui/card"
+import { Dialog, DialogContent, DialogHeader, DialogTitle } from "@/components/ui/dialog"
 import { Badge } from "@/components/ui/badge"
 import Link from "next/link"
 import { Footer } from "@/components/footer"
@@ -18,10 +19,15 @@ import { Footer } from "@/components/footer"
 function HomePageContent() {
   const searchParams = useSearchParams()
   const [products, setProducts] = useState<any[]>([])
+  const [allProducts, setAllProducts] = useState<any[]>([])
   const [departments, setDepartments] = useState<any[]>([])
   const [store, setStore] = useState<any>(null)
   const [loading, setLoading] = useState(true)
   const [selectedDepartment, setSelectedDepartment] = useState<string>("")
+  const [categoryDialogOpen, setCategoryDialogOpen] = useState(false)
+  const [dialogDepartment, setDialogDepartment] = useState<any | null>(null)
+  const [dialogProducts, setDialogProducts] = useState<any[]>([])
+  const [dialogLoading, setDialogLoading] = useState(false)
   const { addToCart } = useCart()
   const { toast } = useToast()
 
@@ -46,6 +52,7 @@ function HomePageContent() {
     if (store) {
       loadDepartments()
       loadProducts()
+      loadAllProducts()
     }
   }, [store, selectedDepartment])
 
@@ -87,6 +94,47 @@ function HomePageContent() {
     }
   }
 
+  const loadAllProducts = async () => {
+    try {
+      const response = await api.product.list({
+        storeId: store._id,
+        page: 1,
+        limit: 1000,
+        order: "desc",
+      })
+      setAllProducts(response.data?.products || response.products || [])
+    } catch (error) {
+      console.error("Error loading all products:", error)
+    }
+  }
+
+  const loadDialogProducts = async (departmentId: string) => {
+    if (!store?._id) {
+      return
+    }
+    try {
+      setDialogLoading(true)
+      const response = await api.product.list({
+        storeId: store._id,
+        page: 1,
+        limit: 100,
+        department: departmentId,
+        order: "desc",
+      })
+      setDialogProducts(response.data?.products || response.products || [])
+    } catch (error) {
+      console.error("Error loading dialog products:", error)
+      toast({
+        title: "Error",
+        description: "Failed to load products. Please try again.",
+        variant: "destructive",
+      })
+      setDialogProducts([])
+    } finally {
+      setDialogLoading(false)
+    }
+  }
+
   const handleAddToCart = (product: any) => {
     const TAX_RATE = 0.0832
 
@@ -107,6 +155,24 @@ function HomePageContent() {
       title: "Added to cart",
       description: `${product.name} has been added to your cart.`,
     })
+  }
+
+  const getProductDepartmentId = (product: any): string | null => {
+    if (product.department) {
+      if (typeof product.department === "string") {
+        return product.department
+      }
+      if (product.department._id) {
+        return product.department._id
+      }
+      if (product.department.id) {
+        return product.department.id
+      }
+    }
+    if (product.departmentId) {
+      return product.departmentId
+    }
+    return null
   }
 
   if (!store) {
@@ -213,7 +279,10 @@ function HomePageContent() {
               </div>
               <div className="grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-4">
                 {featuredDepartments.map((dept) => {
-                  const deptProducts = products.filter((p) => p.department === dept._id)
+                  const deptProducts = allProducts.filter((p) => {
+                    const productDeptId = getProductDepartmentId(p)
+                    return productDeptId && String(productDeptId) === String(dept._id)
+                  })
                   const categoryImages: { [key: string]: string } = {
                     Sushi: "https://images.unsplash.com/photo-1579584425555-c3ce17fd4351?w=400&h=300&fit=crop",
                     Pizza: "https://images.unsplash.com/photo-1513104890138-7c749659a591?w=400&h=300&fit=crop",
@@ -230,7 +299,11 @@ function HomePageContent() {
                     <Card
                       key={dept._id}
                       className="group cursor-pointer overflow-hidden border-2 border-transparent transition-all hover:border-orange-500 hover:shadow-xl dark:hover:border-orange-400"
-                      onClick={() => setSelectedDepartment(dept._id)}
+                      onClick={() => {
+                        setDialogDepartment(dept)
+                        setCategoryDialogOpen(true)
+                        loadDialogProducts(dept._id)
+                      }}
                     >
                       <div className="relative h-48 overflow-hidden">
                         <img
@@ -389,6 +462,34 @@ function HomePageContent() {
         )}
 
       </main>
+      <Dialog open={categoryDialogOpen} onOpenChange={setCategoryDialogOpen}>
+        <DialogContent className="w-[92vw] max-w-[92vw] max-h-[90vh] overflow-y-auto">
+          <DialogTitle className="sr-only">{dialogDepartment?.name || "Category Items"}</DialogTitle>
+          <DialogHeader>
+            <div className="text-lg font-semibold text-foreground">
+              {dialogDepartment?.name || "Category Items"}
+            </div>
+          </DialogHeader>
+          {dialogLoading ? (
+            <div className="flex items-center justify-center py-12">
+              <Loader2 className="h-8 w-8 animate-spin text-primary" />
+            </div>
+          ) : dialogProducts.length === 0 ? (
+            <Card className="py-10 text-center">
+              <Utensils className="mx-auto mb-4 h-10 w-10 text-muted-foreground" />
+              <p className="text-muted-foreground">No products found in this category.</p>
+            </Card>
+          ) : (
+            <div className="flex snap-x snap-mandatory gap-4 overflow-x-auto pb-2 md:grid md:snap-none md:grid-cols-2 md:gap-6 lg:grid-cols-3">
+              {dialogProducts.map((product) => (
+                <div key={product._id} className="min-w-[260px] snap-start md:min-w-0">
+                  <ProductCard product={product} onAddToCart={handleAddToCart} />
+                </div>
+              ))}
+            </div>
+          )}
+        </DialogContent>
+      </Dialog>
       <Footer />
     </div>
   )

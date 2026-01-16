@@ -3,6 +3,7 @@
 import { useState, useEffect } from "react"
 import { api } from "@/lib/api"
 import { setAuthToken, removeAuthToken, setUser, getUser, isAuthenticated, type User } from "@/lib/auth"
+import { getStoreSlug } from "@/lib/store"
 
 export function useAuth() {
   const [user, setUserState] = useState<User | null>(() => getUser())
@@ -32,16 +33,38 @@ export function useAuth() {
     }
   }
 
-  const login = async (phone: string) => {
+  const login = async (phone: string, storeOverride?: string) => {
     try {
       setIsLoading(true)
       setError(null)
       console.log("[v0] Attempting login with phone:", phone)
-      const response = await api.auth.login(phone)
+      const store = storeOverride || getStoreSlug()
+      const response = await api.auth.login(phone, store)
       console.log("[v0] Login response:", response)
 
+      // For OTP flow, login might not return a token immediately
+      // Return true to indicate OTP was sent successfully
+      return true
+    } catch (err: any) {
+      console.error("[v0] Login error:", err)
+      setError(err.message || "Login failed")
+      return false
+    } finally {
+      setIsLoading(false)
+    }
+  }
+
+  const verifyOtp = async (phone: string, otp: string, storeOverride?: string) => {
+    try {
+      setIsLoading(true)
+      setError(null)
+      console.log("[v0] Attempting OTP verification with phone:", phone)
+      const store = storeOverride || getStoreSlug()
+      const response = await api.auth.verifyOtp(phone, otp, store)
+      console.log("[v0] OTP verification response:", response)
+
       const token = response?.token || response?.data?.token || response?.data?.accessToken || response?.accessToken
-      const userData = response?.user || response?.data?.user || response?.data
+      let userData = response?.user || response?.data?.user || response?.data
 
       console.log("[v0] Extracted token:", token ? "Token received" : "No token")
       console.log("[v0] Extracted user:", userData)
@@ -54,16 +77,17 @@ export function useAuth() {
         } else {
           // Fetch profile after login
           await fetchProfile()
+          userData = getUser()
         }
-        return true
+        return { success: true, user: userData }
       } else {
         console.error("[v0] No token in response. Full response:", JSON.stringify(response))
         throw new Error("No token received")
       }
     } catch (err: any) {
-      console.error("[v0] Login error:", err)
-      setError(err.message || "Login failed")
-      return false
+      console.error("[v0] OTP verification error:", err)
+      setError(err.message || "OTP verification failed")
+      return { success: false, user: null }
     } finally {
       setIsLoading(false)
     }
@@ -98,6 +122,7 @@ export function useAuth() {
     isLoading,
     error,
     login,
+    verifyOtp,
     logout,
     updateProfile,
   }
