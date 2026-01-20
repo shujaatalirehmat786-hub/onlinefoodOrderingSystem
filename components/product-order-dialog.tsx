@@ -1,7 +1,7 @@
 "use client"
 
 import { useState, useEffect } from "react"
-import { Dialog, DialogContent, DialogHeader } from "@/components/ui/dialog"
+import { Dialog, DialogContent, DialogDescription, DialogHeader, DialogTitle } from "@/components/ui/dialog"
 import { Button } from "@/components/ui/button"
 import { Input } from "@/components/ui/input"
 import { Label } from "@/components/ui/label"
@@ -179,132 +179,136 @@ export function ProductOrderDialog({ product, open, onOpenChange }: ProductOrder
           ) : (
             <>
               {/* Product Name and Price */}
-              <DialogHeader className="text-left">
-                <h2 className="text-2xl font-bold text-gray-900 dark:text-white">{displayProduct.name}</h2>
-            <div className="mt-2 flex items-center gap-2">
-              <span className="text-2xl font-bold text-pink-600 dark:text-pink-400">
-                ${basePrice.toFixed(2)}
-              </span>
-              {discount > 0 && (
-                <>
-                  <span className="text-lg text-gray-400 line-through">
-                    ${originalPrice.toFixed(2)}
+              <DialogHeader className="space-y-2 text-left">
+                <DialogTitle className="text-2xl font-bold text-gray-900 dark:text-white">
+                  {displayProduct.name}
+                </DialogTitle>
+                <div className="flex items-center gap-2">
+                  <span className="text-2xl font-bold text-pink-600 dark:text-pink-400">
+                    ${basePrice.toFixed(2)}
                   </span>
-                  <span className="rounded-full bg-pink-100 px-2 py-1 text-xs font-semibold text-pink-600 dark:bg-pink-900/30 dark:text-pink-400">
-                    {discount}% off
-                  </span>
-                </>
-              )}
-            </div>
+                  {discount > 0 && (
+                    <>
+                      <span className="text-lg text-gray-400 line-through">
+                        ${originalPrice.toFixed(2)}
+                      </span>
+                      <span className="rounded-full bg-pink-100 px-2 py-1 text-xs font-semibold text-pink-600 dark:bg-pink-900/30 dark:text-pink-400">
+                        {discount}% off
+                      </span>
+                    </>
+                  )}
+                </div>
                 {displayProduct.description && (
-                  <p className="mt-2 text-sm text-gray-600 dark:text-gray-400">{displayProduct.description}</p>
+                  <DialogDescription className="text-sm text-gray-600 dark:text-gray-400">
+                    {displayProduct.description}
+                  </DialogDescription>
                 )}
               </DialogHeader>
 
-          {/* Variations/Modifiers */}
-          {modifierGroups.length > 0 && (
-            <div className="mt-6 space-y-4">
-              {modifierGroups.map((group) => {
-                const isRequired = group.required || group.selectType === "single"
-                const isVariation = group.name?.toLowerCase().includes("variation") || isRequired
-                
-                return (
-                  <div key={group._id} className="rounded-lg bg-pink-50 p-4 dark:bg-pink-950/20">
-                    <div className="mb-3 flex items-center justify-between">
-                      <Label className="text-base font-semibold text-gray-900 dark:text-white">
-                        {group.name}
-                      </Label>
-                      <span className="rounded-full bg-pink-200 px-2 py-1 text-xs font-medium text-pink-700 dark:bg-pink-900/50 dark:text-pink-300">
-                        {isRequired ? "Required" : "Optional"}
-                      </span>
-                    </div>
-                    {group.modifiers && group.modifiers.length > 0 && (
-                      <>
-                        {isVariation ? (
-                          // Radio buttons for variations (single select)
-                          <RadioGroup
-                            value={selectedVariation}
-                            onValueChange={setSelectedVariation}
-                            className="space-y-3"
-                          >
-                            {group.modifiers.map((modifier: any) => {
-                              const modPrice = Number(modifier.price || 0)
-                              const modTotal = basePrice + modPrice
-                              return (
-                                <div
-                                  key={modifier._id}
-                                  className="flex items-center justify-between rounded-lg border-2 border-transparent bg-white p-3 transition-colors hover:border-pink-300 dark:bg-gray-800"
-                                >
-                                  <div className="flex items-center gap-3">
-                                    <RadioGroupItem value={modifier._id} id={modifier._id} />
-                                    <Label
-                                      htmlFor={modifier._id}
-                                      className="cursor-pointer font-medium text-gray-900 dark:text-white"
+              {/* Variations/Modifiers */}
+              {modifierGroups.length > 0 && (
+                <div className="mt-6 space-y-4">
+                  {modifierGroups.map((group) => {
+                    const isRequired = group.required || group.selectType === "single"
+                    const isVariation = group.name?.toLowerCase().includes("variation") || isRequired
+
+                    return (
+                      <div key={group._id} className="rounded-lg bg-pink-50 p-4 dark:bg-pink-950/20">
+                        <div className="mb-3 flex items-center justify-between">
+                          <Label className="text-base font-semibold text-gray-900 dark:text-white">
+                            {group.name}
+                          </Label>
+                          <span className="rounded-full bg-pink-200 px-2 py-1 text-xs font-medium text-pink-700 dark:bg-pink-900/50 dark:text-pink-300">
+                            {isRequired ? "Required" : "Optional"}
+                          </span>
+                        </div>
+                        {group.modifiers && group.modifiers.length > 0 && (
+                          <>
+                            {isVariation ? (
+                              // Radio buttons for variations (single select)
+                              <RadioGroup
+                                value={selectedVariation}
+                                onValueChange={setSelectedVariation}
+                                className="space-y-3"
+                              >
+                                {group.modifiers.map((modifier: any) => {
+                                  const modPrice = Number(modifier.price || 0)
+                                  const modTotal = basePrice + modPrice
+                                  return (
+                                    <div
+                                      key={modifier._id}
+                                      className="flex items-center justify-between rounded-lg border-2 border-transparent bg-white p-3 transition-colors hover:border-pink-300 dark:bg-gray-800"
                                     >
-                                      {modifier.name}
-                                    </Label>
-                                  </div>
-                                  <div className="text-right">
-                                    <div className="text-pink-600 dark:text-pink-400">
-                                      ${modTotal.toFixed(2)}
-                                    </div>
-                                    {modPrice > 0 && originalPrice > basePrice && (
-                                      <div className="text-xs text-gray-400 line-through">
-                                        ${(modTotal + modPrice).toFixed(2)}
+                                      <div className="flex items-center gap-3">
+                                        <RadioGroupItem value={modifier._id} id={modifier._id} />
+                                        <Label
+                                          htmlFor={modifier._id}
+                                          className="cursor-pointer font-medium text-gray-900 dark:text-white"
+                                        >
+                                          {modifier.name}
+                                        </Label>
                                       </div>
-                                    )}
-                                  </div>
-                                </div>
-                              )
-                            })}
-                          </RadioGroup>
-                        ) : (
-                          // Checkboxes for add-ons (multi select)
-                          <div className="space-y-3">
-                            {group.modifiers.map((modifier: any) => {
-                              const modPrice = Number(modifier.price || 0)
-                              const isSelected = selectedModifiers.some((m) => m._id === modifier._id)
-                              return (
-                                <div
-                                  key={modifier._id}
-                                  className="flex items-center justify-between rounded-lg border-2 border-transparent bg-white p-3 transition-colors hover:border-pink-300 dark:bg-gray-800"
-                                >
-                                  <div className="flex items-center gap-3">
-                                    <Checkbox
-                                      id={modifier._id}
-                                      checked={isSelected}
-                                      onCheckedChange={(checked) => {
-                                        if (checked) {
-                                          setSelectedModifiers([...selectedModifiers, modifier])
-                                        } else {
-                                          setSelectedModifiers(selectedModifiers.filter((m) => m._id !== modifier._id))
-                                        }
-                                      }}
-                                    />
-                                    <Label
-                                      htmlFor={modifier._id}
-                                      className="cursor-pointer font-medium text-gray-900 dark:text-white"
-                                    >
-                                      {modifier.name}
-                                    </Label>
-                                  </div>
-                                  {modPrice > 0 && (
-                                    <div className="text-pink-600 dark:text-pink-400">
-                                      +${modPrice.toFixed(2)}
+                                      <div className="text-right">
+                                        <div className="text-pink-600 dark:text-pink-400">
+                                          ${modTotal.toFixed(2)}
+                                        </div>
+                                        {modPrice > 0 && originalPrice > basePrice && (
+                                          <div className="text-xs text-gray-400 line-through">
+                                            ${(modTotal + modPrice).toFixed(2)}
+                                          </div>
+                                        )}
+                                      </div>
                                     </div>
-                                  )}
-                                </div>
-                              )
-                            })}
-                          </div>
+                                  )
+                                })}
+                              </RadioGroup>
+                            ) : (
+                              // Checkboxes for add-ons (multi select)
+                              <div className="space-y-3">
+                                {group.modifiers.map((modifier: any) => {
+                                  const modPrice = Number(modifier.price || 0)
+                                  const isSelected = selectedModifiers.some((m) => m._id === modifier._id)
+                                  return (
+                                    <div
+                                      key={modifier._id}
+                                      className="flex items-center justify-between rounded-lg border-2 border-transparent bg-white p-3 transition-colors hover:border-pink-300 dark:bg-gray-800"
+                                    >
+                                      <div className="flex items-center gap-3">
+                                        <Checkbox
+                                          id={modifier._id}
+                                          checked={isSelected}
+                                          onCheckedChange={(checked) => {
+                                            if (checked) {
+                                              setSelectedModifiers([...selectedModifiers, modifier])
+                                            } else {
+                                              setSelectedModifiers(selectedModifiers.filter((m) => m._id !== modifier._id))
+                                            }
+                                          }}
+                                        />
+                                        <Label
+                                          htmlFor={modifier._id}
+                                          className="cursor-pointer font-medium text-gray-900 dark:text-white"
+                                        >
+                                          {modifier.name}
+                                        </Label>
+                                      </div>
+                                      {modPrice > 0 && (
+                                        <div className="text-pink-600 dark:text-pink-400">
+                                          +${modPrice.toFixed(2)}
+                                        </div>
+                                      )}
+                                    </div>
+                                  )
+                                })}
+                              </div>
+                            )}
+                          </>
                         )}
-                      </>
-                    )}
-                  </div>
-                )
-              })}
-            </div>
-          )}
+                      </div>
+                    )
+                  })}
+                </div>
+              )}
 
           {/* Special Instructions */}
           <div className="mt-6">

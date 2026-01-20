@@ -8,10 +8,10 @@ import { api } from "@/lib/api"
 import { getStoreFromSubdomain } from "@/lib/store"
 import { useCart } from "@/hooks/use-cart"
 import { useToast } from "@/hooks/use-toast"
-import { Loader2, Clock, Star, TrendingUp, Utensils, MapPin, Phone, ShoppingBag, CheckCircle2, Truck, Shield, Heart } from "lucide-react"
+import { Loader2, Clock, Star, TrendingUp, Utensils, MapPin, Phone, ShoppingBag, CheckCircle2, Truck, Shield, Heart, X } from "lucide-react"
 import { Button } from "@/components/ui/button"
 import { Card } from "@/components/ui/card"
-import { Dialog, DialogContent, DialogHeader, DialogTitle } from "@/components/ui/dialog"
+import { Dialog, DialogClose, DialogContent, DialogHeader, DialogTitle } from "@/components/ui/dialog"
 import { Badge } from "@/components/ui/badge"
 import Link from "next/link"
 import { Footer } from "@/components/footer"
@@ -463,31 +463,67 @@ function HomePageContent() {
 
       </main>
       <Dialog open={categoryDialogOpen} onOpenChange={setCategoryDialogOpen}>
-        <DialogContent className="w-[92vw] max-w-[92vw] max-h-[90vh] overflow-y-auto">
+        <DialogContent className="w-[85vw] max-w-[900px] max-h-[85vh] overflow-hidden rounded-[20px] border-0 p-0 shadow-2xl data-[state=open]:animate-in data-[state=closed]:animate-out data-[state=open]:fade-in-0 data-[state=closed]:fade-out-0 data-[state=open]:zoom-in-95 data-[state=closed]:zoom-out-95">
           <DialogTitle className="sr-only">{dialogDepartment?.name || "Category Items"}</DialogTitle>
-          <DialogHeader>
-            <div className="text-lg font-semibold text-foreground">
-              {dialogDepartment?.name || "Category Items"}
+          <DialogHeader className="sticky top-0 z-10 border-b bg-background/95 px-6 py-4 text-left">
+            <div className="flex items-start justify-between gap-4">
+              <div>
+                <div className="text-2xl font-bold text-foreground">
+                  {dialogDepartment?.name || "Category Items"}
+                </div>
+                <div className="mt-1 text-sm text-muted-foreground">
+                  {dialogProducts.length} items available
+                </div>
+              </div>
+              <DialogClose className="flex h-9 w-9 items-center justify-center rounded-full bg-gray-100 text-gray-700 transition hover:bg-gray-200">
+                <X className="h-4 w-4" />
+                <span className="sr-only">Close</span>
+              </DialogClose>
             </div>
           </DialogHeader>
-          {dialogLoading ? (
-            <div className="flex items-center justify-center py-12">
-              <Loader2 className="h-8 w-8 animate-spin text-primary" />
-            </div>
-          ) : dialogProducts.length === 0 ? (
-            <Card className="py-10 text-center">
-              <Utensils className="mx-auto mb-4 h-10 w-10 text-muted-foreground" />
-              <p className="text-muted-foreground">No products found in this category.</p>
-            </Card>
-          ) : (
-            <div className="flex snap-x snap-mandatory gap-4 overflow-x-auto pb-2 md:grid md:snap-none md:grid-cols-2 md:gap-6 lg:grid-cols-3">
-              {dialogProducts.map((product) => (
-                <div key={product._id} className="min-w-[260px] snap-start md:min-w-0">
-                  <ProductCard product={product} onAddToCart={handleAddToCart} />
-                </div>
-              ))}
-            </div>
-          )}
+          <div className="max-h-[calc(85vh-96px)] overflow-y-auto px-6 py-5">
+            {dialogLoading ? (
+              <div className="flex items-center justify-center py-12">
+                <Loader2 className="h-8 w-8 animate-spin text-primary" />
+              </div>
+            ) : dialogProducts.length === 0 ? (
+              <Card className="py-10 text-center">
+                <Utensils className="mx-auto mb-4 h-10 w-10 text-muted-foreground" />
+                <p className="text-muted-foreground">No products found in this category.</p>
+              </Card>
+            ) : (
+              <div className="grid grid-cols-1 gap-5 md:grid-cols-2">
+                {dialogProducts.map((product) => (
+                  <div
+                    key={product._id}
+                    className="flex flex-col gap-4 rounded-xl border border-border/40 bg-card p-4 shadow-sm transition hover:shadow-md sm:flex-row"
+                  >
+                    <div className="h-28 w-full overflow-hidden rounded-lg bg-muted sm:h-24 sm:w-28">
+                      <img
+                        src={product.image || `https://images.unsplash.com/photo-1546069901-ba9599a7e63c?w=400&h=300&fit=crop&q=${encodeURIComponent(product.name)}`}
+                        alt={product.name}
+                        className="h-full w-full object-cover"
+                      />
+                    </div>
+                    <div className="flex flex-1 flex-col gap-2">
+                      <div>
+                        <div className="text-lg font-semibold text-foreground">{product.name}</div>
+                        <div className="text-sm text-muted-foreground">
+                          {Number(product.price).toFixed(2)} USD
+                        </div>
+                      </div>
+                      {product.description && (
+                        <p className="text-sm text-muted-foreground line-clamp-2">{product.description}</p>
+                      )}
+                      <Button className="mt-auto w-full" onClick={() => handleAddToCart(product)}>
+                        Add to Cart
+                      </Button>
+                    </div>
+                  </div>
+                ))}
+              </div>
+            )}
+          </div>
         </DialogContent>
       </Dialog>
       <Footer />
