@@ -1,6 +1,6 @@
 "use client"
 
-import { useState, useEffect } from "react"
+import { useState, useEffect, Suspense } from "react"
 import { useRouter, useSearchParams } from "next/navigation"
 import { Header } from "@/components/header"
 import { Button } from "@/components/ui/button"
@@ -11,7 +11,7 @@ import { useAuth } from "@/hooks/use-auth"
 import { Loader2, User } from "lucide-react"
 import { useToast } from "@/hooks/use-toast"
 
-export default function ProfilePage() {
+function ProfilePageContent() {
   const router = useRouter()
   const searchParams = useSearchParams()
   const { user, updateProfile, isLoading, error, isAuthenticated } = useAuth()
@@ -309,3 +309,21 @@ export default function ProfilePage() {
   )
 }
 
+export default function ProfilePage() {
+  return (
+    <Suspense
+      fallback={
+        <div className="min-h-screen bg-background">
+          <Header />
+          <main className="container px-4 py-8">
+            <div className="flex items-center justify-center py-12">
+              <Loader2 className="h-8 w-8 animate-spin text-primary" />
+            </div>
+          </main>
+        </div>
+      }
+    >
+      <ProfilePageContent />
+    </Suspense>
+  )
+}

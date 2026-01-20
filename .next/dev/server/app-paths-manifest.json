@@ -1,9 +1,5 @@
 {
-  "/api/online-order/[...path]/route": "app/api/online-order/[...path]/route.js",
   "/api/proxy/[...path]/route": "app/api/proxy/[...path]/route.js",
-  "/cart/page": "app/cart/page.js",
   "/categories/page": "app/categories/page.js",
-  "/checkout/page": "app/checkout/page.js",
-  "/orders/page": "app/orders/page.js",
   "/page": "app/page.js"
 }
