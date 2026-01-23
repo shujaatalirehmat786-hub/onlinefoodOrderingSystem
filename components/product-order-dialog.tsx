@@ -9,6 +9,7 @@ import { RadioGroup, RadioGroupItem } from "@/components/ui/radio-group"
 import { Checkbox } from "@/components/ui/checkbox"
 import { X, Minus, Plus } from "lucide-react"
 import { api } from "@/lib/api"
+import { cn } from "@/lib/utils"
 import { useCart } from "@/hooks/use-cart"
 import { useToast } from "@/hooks/use-toast"
 
@@ -150,10 +151,14 @@ export function ProductOrderDialog({ product, open, onOpenChange }: ProductOrder
   const basePrice = Number(displayProduct.price)
   const discount = displayProduct.discount || 0
   const originalPrice = discount > 0 ? basePrice / (1 - discount / 100) : basePrice
+  const dialogTitle = displayProduct?.name || product?.name || "Product details"
 
   return (
     <Dialog open={open} onOpenChange={onOpenChange}>
-      <DialogContent className="max-h-[90vh] max-w-2xl overflow-y-auto p-0">
+      <DialogContent
+        className="max-h-[90vh] max-w-2xl overflow-y-auto p-0"
+        showCloseButton={false}
+      >
         {/* Product Image */}
         <div className="relative h-64 w-full overflow-hidden">
           <img
@@ -172,17 +177,17 @@ export function ProductOrderDialog({ product, open, onOpenChange }: ProductOrder
         </div>
 
         <div className="p-6">
-          {loading ? (
-            <div className="flex items-center justify-center py-12">
-              <div className="h-8 w-8 animate-spin rounded-full border-4 border-orange-600 border-t-transparent" />
-            </div>
-          ) : (
-            <>
-              {/* Product Name and Price */}
-              <DialogHeader className="space-y-2 text-left">
-                <DialogTitle className="text-2xl font-bold text-gray-900 dark:text-white">
-                  {displayProduct.name}
-                </DialogTitle>
+          <DialogHeader className="space-y-2 text-left">
+            <DialogTitle
+              className={cn(
+                "text-2xl font-bold text-gray-900 dark:text-white",
+                loading && "sr-only",
+              )}
+            >
+              {dialogTitle}
+            </DialogTitle>
+            {!loading && (
+              <>
                 <div className="flex items-center gap-2">
                   <span className="text-2xl font-bold text-pink-600 dark:text-pink-400">
                     ${basePrice.toFixed(2)}
@@ -203,7 +208,16 @@ export function ProductOrderDialog({ product, open, onOpenChange }: ProductOrder
                     {displayProduct.description}
                   </DialogDescription>
                 )}
-              </DialogHeader>
+              </>
+            )}
+          </DialogHeader>
+
+          {loading ? (
+            <div className="flex items-center justify-center py-12">
+              <div className="h-8 w-8 animate-spin rounded-full border-4 border-orange-600 border-t-transparent" />
+            </div>
+          ) : (
+            <>
 
               {/* Variations/Modifiers */}
               {modifierGroups.length > 0 && (
