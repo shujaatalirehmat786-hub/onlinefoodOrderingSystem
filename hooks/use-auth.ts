@@ -15,6 +15,17 @@ export function useAuth() {
     if (isAuthenticated() && !user) {
       fetchProfile()
     }
+
+    const handleAuthUpdate = () => {
+      setUserState(getUser())
+    }
+
+    window.addEventListener("storage", handleAuthUpdate)
+    window.addEventListener("auth_updated", handleAuthUpdate)
+    return () => {
+      window.removeEventListener("storage", handleAuthUpdate)
+      window.removeEventListener("auth_updated", handleAuthUpdate)
+    }
   }, [])
 
   const fetchProfile = async () => {
@@ -79,6 +90,7 @@ export function useAuth() {
           await fetchProfile()
           userData = getUser()
         }
+        window.dispatchEvent(new Event("auth_updated"))
         return { success: true, user: userData }
       } else {
         console.error("[v0] No token in response. Full response:", JSON.stringify(response))
@@ -96,6 +108,7 @@ export function useAuth() {
   const logout = () => {
     removeAuthToken()
     setUserState(null)
+    window.dispatchEvent(new Event("auth_updated"))
   }
 
   const updateProfile = async (data: Partial<User>) => {
@@ -106,6 +119,7 @@ export function useAuth() {
       const userData = response.data || response
       setUser(userData)
       setUserState(userData)
+      window.dispatchEvent(new Event("auth_updated"))
       return true
     } catch (err: any) {
       console.error("[v0] Update profile error:", err)

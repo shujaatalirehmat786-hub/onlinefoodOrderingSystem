@@ -696,6 +696,19 @@ function useAuth() {
             if ((0, __TURBOPACK__imported__module__$5b$project$5d2f$lib$2f$auth$2e$ts__$5b$app$2d$client$5d$__$28$ecmascript$29$__["isAuthenticated"])() && !user) {
                 fetchProfile();
             }
+            const handleAuthUpdate = {
+                "useAuth.useEffect.handleAuthUpdate": ()=>{
+                    setUserState((0, __TURBOPACK__imported__module__$5b$project$5d2f$lib$2f$auth$2e$ts__$5b$app$2d$client$5d$__$28$ecmascript$29$__["getUser"])());
+                }
+            }["useAuth.useEffect.handleAuthUpdate"];
+            window.addEventListener("storage", handleAuthUpdate);
+            window.addEventListener("auth_updated", handleAuthUpdate);
+            return ({
+                "useAuth.useEffect": ()=>{
+                    window.removeEventListener("storage", handleAuthUpdate);
+                    window.removeEventListener("auth_updated", handleAuthUpdate);
+                }
+            })["useAuth.useEffect"];
         }
     }["useAuth.useEffect"], []);
     const fetchProfile = async ()=>{
@@ -754,6 +767,7 @@ function useAuth() {
                     await fetchProfile();
                     userData = (0, __TURBOPACK__imported__module__$5b$project$5d2f$lib$2f$auth$2e$ts__$5b$app$2d$client$5d$__$28$ecmascript$29$__["getUser"])();
                 }
+                window.dispatchEvent(new Event("auth_updated"));
                 return {
                     success: true,
                     user: userData
@@ -776,6 +790,7 @@ function useAuth() {
     const logout = ()=>{
         (0, __TURBOPACK__imported__module__$5b$project$5d2f$lib$2f$auth$2e$ts__$5b$app$2d$client$5d$__$28$ecmascript$29$__["removeAuthToken"])();
         setUserState(null);
+        window.dispatchEvent(new Event("auth_updated"));
     };
     const updateProfile = async (data)=>{
         try {
@@ -785,6 +800,7 @@ function useAuth() {
             const userData = response.data || response;
             (0, __TURBOPACK__imported__module__$5b$project$5d2f$lib$2f$auth$2e$ts__$5b$app$2d$client$5d$__$28$ecmascript$29$__["setUser"])(userData);
             setUserState(userData);
+            window.dispatchEvent(new Event("auth_updated"));
             return true;
         } catch (err) {
             console.error("[v0] Update profile error:", err);
@@ -937,26 +953,34 @@ function useCart() {
                 }
             }["useCart.useEffect.handleStorageChange"];
             window.addEventListener("storage", handleStorageChange);
+            window.addEventListener("cart_updated", handleStorageChange);
             return ({
-                "useCart.useEffect": ()=>window.removeEventListener("storage", handleStorageChange)
+                "useCart.useEffect": ()=>{
+                    window.removeEventListener("storage", handleStorageChange);
+                    window.removeEventListener("cart_updated", handleStorageChange);
+                }
             })["useCart.useEffect"];
         }
     }["useCart.useEffect"], []);
     const addToCart = (item)=>{
         const updatedCart = (0, __TURBOPACK__imported__module__$5b$project$5d2f$lib$2f$cart$2e$ts__$5b$app$2d$client$5d$__$28$ecmascript$29$__["addToCart"])(item);
         setCart(updatedCart);
+        window.dispatchEvent(new Event("cart_updated"));
     };
     const removeFromCart = (index)=>{
         const updatedCart = (0, __TURBOPACK__imported__module__$5b$project$5d2f$lib$2f$cart$2e$ts__$5b$app$2d$client$5d$__$28$ecmascript$29$__["removeFromCart"])(index);
         setCart(updatedCart);
+        window.dispatchEvent(new Event("cart_updated"));
     };
     const updateQuantity = (index, quantity)=>{
         const updatedCart = (0, __TURBOPACK__imported__module__$5b$project$5d2f$lib$2f$cart$2e$ts__$5b$app$2d$client$5d$__$28$ecmascript$29$__["updateCartItemQuantity"])(index, quantity);
         setCart(updatedCart);
+        window.dispatchEvent(new Event("cart_updated"));
     };
     const clearCart = ()=>{
         (0, __TURBOPACK__imported__module__$5b$project$5d2f$lib$2f$cart$2e$ts__$5b$app$2d$client$5d$__$28$ecmascript$29$__["clearCart"])();
         setCart((0, __TURBOPACK__imported__module__$5b$project$5d2f$lib$2f$cart$2e$ts__$5b$app$2d$client$5d$__$28$ecmascript$29$__["getCart"])());
+        window.dispatchEvent(new Event("cart_updated"));
     };
     return {
         cart,
