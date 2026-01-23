@@ -9,7 +9,6 @@ import { Dialog, DialogContent, DialogDescription, DialogHeader, DialogTitle } f
 import { Input } from "@/components/ui/input"
 import { Label } from "@/components/ui/label"
 import { useAuth } from "@/hooks/use-auth"
-import { getStoreSlug } from "@/lib/store"
 import { Loader2 } from "lucide-react"
 
 interface AuthDialogProps {
@@ -20,7 +19,7 @@ interface AuthDialogProps {
 export function AuthDialog({ open, onOpenChange }: AuthDialogProps) {
   const router = useRouter()
   const [phone, setPhone] = useState("")
-  const [store, setStore] = useState(() => getStoreSlug())
+  const [store, setStore] = useState("")
   const [otp, setOtp] = useState("")
   const [showOtpInput, setShowOtpInput] = useState(false)
   const { login, verifyOtp, isLoading, error, user } = useAuth()
@@ -39,7 +38,7 @@ export function AuthDialog({ open, onOpenChange }: AuthDialogProps) {
     if (result?.success) {
       onOpenChange(false)
       setPhone("")
-      setStore(getStoreSlug())
+      setStore("")
       setOtp("")
       setShowOtpInput(false)
       
@@ -55,7 +54,7 @@ export function AuthDialog({ open, onOpenChange }: AuthDialogProps) {
   const handleDialogClose = (open: boolean) => {
     if (!open) {
       setPhone("")
-      setStore(getStoreSlug())
+      setStore("")
       setOtp("")
       setShowOtpInput(false)
     }

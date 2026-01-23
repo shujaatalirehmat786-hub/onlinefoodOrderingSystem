@@ -1,111 +1,244 @@
-[00:00:01.917] Server  LOG      ✓ Ready in 1306ms
-[00:00:19.469] Server  LOG      ○ Compiling / ...
-[00:00:21.040] Server  WARN     ⚠ Cross origin request detected from 192.168.18.227 to /_next/* resource. In a future major version of Next.js, you will need to explicitly configure "allowedDevOrigins" in next.config to allow this.
-Read more: https://nextjs.org/docs/app/api-reference/config/next-config-js/allowedDevOrigins
-[00:00:21.103] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
-[00:00:21.547] Browser LOG     %c[Vercel Web Analytics]%c Debug mode is enabled by default in development. No requests will be sent to the server. color: rgb(120, 120, 120) color: inherit
-[00:00:21.547] Browser LOG     %c[Vercel Web Analytics]%c Running queued event color: rgb(120, 120, 120) color: inherit pageview {"path":"/","route":"/"}
-[00:00:21.547] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://192.168.18.227:3000/ color: rgb(120, 120, 120) color: inherit {"dp":"/","o":"http://192.168.18.227:3000/","r":"","sdkn":"@vercel/analytics/next","sdkv":"1.3.1","sv":"0.1.3","ts":1769187103552}
-[00:00:22.538] Server  LOG     [v0] API Proxy GET: "https://api.livedatanow.com/api/online-order/store/by-subdomain?hostname=savera"
-[00:00:23.661] Server  LOG     [v0] API Proxy GET response: "{\"success\":true,\"data\":{\"_id\":\"68c328b7a277614f117d8226\",\"name\":\"SAVERA INDIAN. KITCHEN\",\"address\":\"5487 N MacArthur Blvd Irving TX 75038.\",\"orderWebsiteId\":{\"_id\":\"68e3ef20eb111c6b9fb9324b\",\"isEnable"
-[00:00:23.776] Server  LOG     [v0] API Proxy GET: "https://api.livedatanow.com/api/online-order/department?storeId=68c328b7a277614f117d8226&page=1&limit=50"
-[00:00:23.785] Server  LOG     [v0] API Proxy GET: "https://api.livedatanow.com/api/online-order/product?storeId=68c328b7a277614f117d8226&page=1&limit=100&order=desc"
-[00:00:23.799] Server  LOG     [v0] API Proxy GET: "https://api.livedatanow.com/api/online-order/product?storeId=68c328b7a277614f117d8226&page=1&limit=1000&order=desc"
-[00:00:25.119] Server  LOG     [v0] API Proxy GET response: "{\"success\":true,\"data\":[{\"_id\":\"68c32f4ea424a04dd9a798d3\",\"name\":\"Biryani's\",\"storeId\":\"68c328b7a277614f117d8226\",\"createdAt\":\"2025-09-11T20:21:34.879Z\",\"__v\":0},{\"_id\":\"68c32f4ea424a04dd9a798dd\",\"nam"
-[00:00:26.993] Server  LOG     [v0] API Proxy GET response: "{\"products\":[{\"_id\":\"68c86e3d6a855d28046a5128\",\"name\":\"Punugullu 100\",\"price\":\"36.00\",\"priceAfterTax\":\"40.00\",\"priceYouCharge\":\"40\",\"tax\":\"0\",\"taxType\":\"direct\",\"description\":\"Appetizers\",\"stock\":-136"
-[00:00:33.252] Server  LOG     [v0] API Proxy GET: "https://api.livedatanow.com/api/online-order/product/68c86e3d6a855d28046a5128"
-[00:00:33.362] Browser WARN    Warning: Missing `Description` or `aria-describedby={undefined}` for {DialogContent}.
-[00:00:33.362] Browser WARN    Warning: Missing `Description` or `aria-describedby={undefined}` for {DialogContent}.
-[00:00:35.144] Server  LOG     [v0] API Proxy GET response: "{\"_id\":\"68c86e3d6a855d28046a5128\",\"name\":\"Punugullu 100\",\"price\":\"36.00\",\"priceAfterTax\":\"40.00\",\"priceYouCharge\":\"40\",\"tax\":\"0\",\"taxType\":\"direct\",\"description\":\"Appetizers\",\"stock\":-136,\"sku\":\"Punug"
-[00:00:35.197] Server  LOG     [v0] API Proxy GET: "https://api.livedatanow.com/api/online-order/modifier?page=1&limit=50&modifierGroupId=%5Bobject+Object%5D"
-[00:00:35.421] Server  ERROR   [v0] API Proxy GET error: "Cast to ObjectId failed for value \"[object Object]\" (type string) at path \"_id\" for model \"ModifierGroup\""
-[00:00:35.445] Server  LOG     [v0] API Proxy GET: "https://api.livedatanow.com/api/online-order/modifier?page=1&limit=50&modifierGroupId=%5Bobject+Object%5D"
-[00:00:35.530] Browser ERROR   [v0] API request failed: {}
-[00:00:35.530] Browser ERROR   Error loading modifiers: {}
-[00:00:35.665] Server  ERROR   [v0] API Proxy GET error: "Cast to ObjectId failed for value \"[object Object]\" (type string) at path \"_id\" for model \"ModifierGroup\""
-[00:00:35.775] Browser ERROR   [v0] API request failed: {}
-[00:00:47.092] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://192.168.18.227:3000/cart color: rgb(120, 120, 120) color: inherit {"dp":"/cart","o":"http://192.168.18.227:3000/cart","sdkn":"@vercel/analytics/next","sdkv":"1.3.1","sv":"0.1.3","ts":1769187129079}
-[00:00:50.712] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://192.168.18.227:3000/checkout color: rgb(120, 120, 120) color: inherit {"dp":"/checkout","o":"http://192.168.18.227:3000/checkout","sdkn":"@vercel/analytics/next","sdkv":"1.3.1","sv":"0.1.3","ts":1769187132665}
-[00:01:17.622] Server  LOG     [v0] API Proxy GET: "https://api.livedatanow.com/api/online-order/profile"
-[00:01:18.317] Server  LOG     [v0] API Proxy GET response: "{\"data\":{\"_id\":\"6969556599adcd61bb592826\",\"name\":\"Shujaat Ali\",\"firstName\":\"Shujaat\",\"lastName\":\"Ali\",\"companyName\":\"aonepos\",\"email\":\"shujaat123@gmail.com\",\"phone\":\"+923475638070\",\"address\":\"ABC\",\"ci"
-[00:01:18.358] Server  LOG     [v0] API Proxy POST: "https://api.livedatanow.com/api/online-order/profile"
-[00:01:18.359] Server  LOG     [v0] API Proxy POST body: "{\"firstName\":\"Shujaat\",\"lastName\":\"Ali\",\"companyName\":\"aonepos\",\"email\":\"shujaat123@gmail.com\",\"phone\":\"+923475638070\",\"address\":\"ABC\",\"city\":\"Dallas\",\"state\":\"Texas\",\"country\":\"United States Of America\"}"
-[00:01:18.634] Server  ERROR   [v0] API Proxy POST error: "<!DOCTYPE html>\n<html lang=\"en\">\n<head>\n<meta charset=\"utf-8\">\n<title>Error</title>\n</head>\n<body>\n<pre>Cannot POST /api/online-order/profile</pre>\n</body>\n</html>\n"
-[00:01:18.671] Server  LOG     [v0] API Proxy PUT: "https://api.livedatanow.com/api/online-order/profile"
-[00:01:18.741] Browser ERROR   [v0] API request failed: {}
-[00:01:18.913] Server  LOG     [v0] API Proxy PUT response: "{\"data\":{\"_id\":\"6969556599adcd61bb592826\",\"name\":\"Shujaat Ali\",\"firstName\":\"Shujaat\",\"lastName\":\"Ali\",\"companyName\":\"aonepos\",\"email\":\"shujaat123@gmail.com\",\"phone\":\"+923475638070\",\"address\":\"ABC\",\"ci"
-[00:01:18.928] Server  LOG     [v0] API Proxy GET: "https://api.livedatanow.com/api/online-order/profile"
-[00:01:18.943] Server  LOG     [v0] API Proxy GET: "https://api.livedatanow.com/api/online-order/profile"
-[00:01:19.155] Server  LOG     [v0] API Proxy GET response: "{\"data\":{\"_id\":\"6969556599adcd61bb592826\",\"name\":\"Shujaat Ali\",\"firstName\":\"Shujaat\",\"lastName\":\"Ali\",\"companyName\":\"aonepos\",\"email\":\"shujaat123@gmail.com\",\"phone\":\"+923475638070\",\"address\":\"ABC\",\"ci"
-[00:01:19.187] Server  LOG     [v0] API Proxy POST: "https://api.livedatanow.com/api/online-order/profile"
-[00:01:19.188] Server  LOG     [v0] API Proxy POST body: "{\"firstName\":\"Shujaat\",\"lastName\":\"Ali\",\"companyName\":\"aonepos\",\"email\":\"shujaat123@gmail.com\",\"phone\":\"+923475638070\",\"address\":\"ABC\",\"city\":\"Dallas\",\"state\":\"Texas\",\"country\":\"United States Of America\"}"
-[00:01:19.604] Server  LOG     [v0] API Proxy GET response: "{\"data\":{\"_id\":\"6969556599adcd61bb592826\",\"name\":\"Shujaat Ali\",\"firstName\":\"Shujaat\",\"lastName\":\"Ali\",\"companyName\":\"aonepos\",\"email\":\"shujaat123@gmail.com\",\"phone\":\"+923475638070\",\"address\":\"ABC\",\"ci"
-[00:01:19.746] Server  LOG     [v0] API Proxy GET: "https://api.livedatanow.com/api/online-order/profile"
-[00:01:19.965] Server  LOG     [v0] API Proxy GET response: "{\"data\":{\"_id\":\"6969556599adcd61bb592826\",\"name\":\"Shujaat Ali\",\"firstName\":\"Shujaat\",\"lastName\":\"Ali\",\"companyName\":\"aonepos\",\"email\":\"shujaat123@gmail.com\",\"phone\":\"+923475638070\",\"address\":\"ABC\",\"ci"
-[00:01:19.996] Server  LOG     [v0] API Proxy POST: "https://api.livedatanow.com/api/online-order/profile"
-[00:01:19.997] Server  LOG     [v0] API Proxy POST body: "{\"firstName\":\"Shujaat\",\"lastName\":\"Ali\",\"companyName\":\"aonepos\",\"email\":\"shujaat123@gmail.com\",\"phone\":\"+923475638070\",\"address\":\"ABC\",\"city\":\"Dallas\",\"state\":\"Texas\",\"country\":\"United States Of America\"}"
-[00:01:20.003] Server  ERROR   [v0] API Proxy POST error: "<!DOCTYPE html>\n<html lang=\"en\">\n<head>\n<meta charset=\"utf-8\">\n<title>Error</title>\n</head>\n<body>\n<pre>Cannot POST /api/online-order/profile</pre>\n</body>\n</html>\n"
-[00:01:20.029] Server  LOG     [v0] API Proxy PUT: "https://api.livedatanow.com/api/online-order/profile"
-[00:01:20.110] Browser ERROR   [v0] API request failed: {}
-[00:01:20.220] Server  ERROR   [v0] API Proxy POST error: "<!DOCTYPE html>\n<html lang=\"en\">\n<head>\n<meta charset=\"utf-8\">\n<title>Error</title>\n</head>\n<body>\n<pre>Cannot POST /api/online-order/profile</pre>\n</body>\n</html>\n"
-[00:01:20.327] Browser ERROR   [v0] API request failed: {}
-[00:01:20.825] Server  LOG     [v0] API Proxy PUT response: "{\"data\":{\"_id\":\"6969556599adcd61bb592826\",\"name\":\"Shujaat Ali\",\"firstName\":\"Shujaat\",\"lastName\":\"Ali\",\"companyName\":\"aonepos\",\"email\":\"shujaat123@gmail.com\",\"phone\":\"+923475638070\",\"address\":\"ABC\",\"ci"
-[00:01:20.855] Server  LOG     [v0] API Proxy PUT: "https://api.livedatanow.com/api/online-order/profile"
-[00:01:20.868] Server  LOG     [v0] API Proxy GET: "https://api.livedatanow.com/api/online-order/profile"
-[00:01:21.085] Server  LOG     [v0] API Proxy PUT response: "{\"data\":{\"_id\":\"6969556599adcd61bb592826\",\"name\":\"Shujaat Ali\",\"firstName\":\"Shujaat\",\"lastName\":\"Ali\",\"companyName\":\"aonepos\",\"email\":\"shujaat123@gmail.com\",\"phone\":\"+923475638070\",\"address\":\"ABC\",\"ci"
-[00:01:21.652] Server  LOG     [v0] API Proxy GET response: "{\"data\":{\"_id\":\"6969556599adcd61bb592826\",\"name\":\"Shujaat Ali\",\"firstName\":\"Shujaat\",\"lastName\":\"Ali\",\"companyName\":\"aonepos\",\"email\":\"shujaat123@gmail.com\",\"phone\":\"+923475638070\",\"address\":\"ABC\",\"ci"
-[00:01:21.675] Server  LOG     [v0] API Proxy GET: "https://api.livedatanow.com/api/online-order/profile"
-[00:01:21.904] Server  LOG     [v0] API Proxy GET response: "{\"data\":{\"_id\":\"6969556599adcd61bb592826\",\"name\":\"Shujaat Ali\",\"firstName\":\"Shujaat\",\"lastName\":\"Ali\",\"companyName\":\"aonepos\",\"email\":\"shujaat123@gmail.com\",\"phone\":\"+923475638070\",\"address\":\"ABC\",\"ci"
-[00:01:25.076] Server  LOG     [v0] API Proxy GET: "https://api.livedatanow.com/api/online-order/profile"
-[00:01:26.764] Server  LOG     [v0] API Proxy GET response: "{\"data\":{\"_id\":\"6969556599adcd61bb592826\",\"name\":\"Shujaat Ali\",\"firstName\":\"Shujaat\",\"lastName\":\"Ali\",\"companyName\":\"aonepos\",\"email\":\"shujaat123@gmail.com\",\"phone\":\"+923475638070\",\"address\":\"ABC\",\"ci"
-[00:01:26.799] Server  LOG     [v0] API Proxy POST: "https://api.livedatanow.com/api/online-order/profile"
-[00:01:26.800] Server  LOG     [v0] API Proxy POST body: "{\"firstName\":\"Shujaat\",\"lastName\":\"Ali\",\"companyName\":\"aonepos\",\"email\":\"shujaat123@gmail.com\",\"phone\":\"+923475638070\",\"address\":\"ABC\",\"city\":\"Dallas\",\"state\":\"Texas\",\"country\":\"United States Of America\"}"
-[00:01:27.702] Server  ERROR   [v0] API Proxy POST error: "<!DOCTYPE html>\n<html lang=\"en\">\n<head>\n<meta charset=\"utf-8\">\n<title>Error</title>\n</head>\n<body>\n<pre>Cannot POST /api/online-order/profile</pre>\n</body>\n</html>\n"
-[00:01:27.740] Server  LOG     [v0] API Proxy PUT: "https://api.livedatanow.com/api/online-order/profile"
-[00:01:27.809] Browser ERROR   [v0] API request failed: {}
-[00:01:30.070] Server  LOG     [v0] API Proxy PUT response: "{\"data\":{\"_id\":\"6969556599adcd61bb592826\",\"name\":\"Shujaat Ali\",\"firstName\":\"Shujaat\",\"lastName\":\"Ali\",\"companyName\":\"aonepos\",\"email\":\"shujaat123@gmail.com\",\"phone\":\"+923475638070\",\"address\":\"ABC\",\"ci"
-[00:01:30.104] Server  LOG     [v0] API Proxy GET: "https://api.livedatanow.com/api/online-order/profile"
-[00:01:30.340] Server  LOG     [v0] API Proxy GET response: "{\"data\":{\"_id\":\"6969556599adcd61bb592826\",\"name\":\"Shujaat Ali\",\"firstName\":\"Shujaat\",\"lastName\":\"Ali\",\"companyName\":\"aonepos\",\"email\":\"shujaat123@gmail.com\",\"phone\":\"+923475638070\",\"address\":\"ABC\",\"ci"
-[00:01:30.366] Server  LOG     [v0] API Proxy POST: "https://api.livedatanow.com/api/online-order/order/place-order"
-[00:01:30.367] Server  LOG     [v0] API Proxy POST body: "{\"orderItems\":[{\"discount\":0,\"modifiers\":[],\"orderId\":\"\",\"price\":36,\"productId\":\"68c86e3d6a855d28046a5128\",\"quantity\":1,\"subTotal\":36,\"tax\":2.9951999999999996}],\"totalDiscount\":\"0\",\"customerId\":\"6969556599adcd61bb592826\",\"paymentMethod\":\"cash\",\"totalTax\":2.9951999999999996,\"subTotal\":36,\"finalTotal\":\"38.9952\",\"type\":\"WEB_PICKUP\"}"
-[00:01:31.416] Server  LOG     [v0] API Proxy POST response: "{\"subTotal\":36,\"totalDiscount\":0,\"totalTax\":2.9951999999999996,\"finalTotal\":\"38.9952\",\"paymentMethod\":\"cash\",\"customerId\":{\"_id\":\"6969556599adcd61bb592826\",\"firstName\":\"Shujaat\",\"lastName\":\"Ali\",\"phone\":\"+923475638070\"},\"storeId\":\"68c328b7a277614f117d8226\",\"status\":\"PENDING\",\"type\":\"WEB_PICKUP\",\"createdAt\":\"2026-01-23T16:52:54.653Z\",\"_id\":\"6973a76690f999bee44165f0\",\"orderNumber\":\"330\",\"orderId\":\"30771\",\"__v\":0,\"orderDetails\":[{\"_id\":\"6973a76690f999bee44165f9\",\"quantity\":1,\"discount\":0,\"price\":36,\"subTotal\":36,\"product\":{\"_id\":\"68c86e3d6a855d28046a5128\",\"name\":\"Punugullu 100\",\"priceYouCharge\":\"40\",\"kitchenId\":{\"_id\":\"68c32f4ea424a04dd9a798d9\",\"name\":\"Kitchen A\",\"printerId\":\"693745a0e43c63d60e6dc17c\"}},\"modifiers\":[]}]}"
-[00:01:33.603] Browser ERROR   [v0] Make payment failed: {}
-[00:01:33.603] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://192.168.18.227:3000/cart color: rgb(120, 120, 120) color: inherit {"dp":"/cart","o":"http://192.168.18.227:3000/cart","sdkn":"@vercel/analytics/next","sdkv":"1.3.1","sv":"0.1.3","ts":1769187175594}
-[00:01:46.827] Server  LOG     [v0] API Proxy GET: "https://api.livedatanow.com/api/online-order/store/by-subdomain?hostname=savera"
-[00:01:46.849] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://192.168.18.227:3000/ color: rgb(120, 120, 120) color: inherit {"dp":"/","o":"http://192.168.18.227:3000/","sdkn":"@vercel/analytics/next","sdkv":"1.3.1","sv":"0.1.3","ts":1769187188853}
-[00:01:48.860] Server  LOG     [v0] API Proxy GET response: "{\"success\":true,\"data\":{\"_id\":\"68c328b7a277614f117d8226\",\"name\":\"SAVERA INDIAN. KITCHEN\",\"address\":\"5487 N MacArthur Blvd Irving TX 75038.\",\"orderWebsiteId\":{\"_id\":\"68e3ef20eb111c6b9fb9324b\",\"isEnable"
-[00:01:48.887] Server  LOG     [v0] API Proxy GET: "https://api.livedatanow.com/api/online-order/store/by-subdomain?hostname=savera"
-[00:01:48.938] Server  LOG     [v0] API Proxy GET: "https://api.livedatanow.com/api/online-order/department?storeId=68c328b7a277614f117d8226&page=1&limit=50"
-[00:01:48.947] Server  LOG     [v0] API Proxy GET: "https://api.livedatanow.com/api/online-order/product?storeId=68c328b7a277614f117d8226&page=1&limit=100&order=desc"
-[00:01:49.136] Server  LOG     [v0] API Proxy GET response: "{\"success\":true,\"data\":{\"_id\":\"68c328b7a277614f117d8226\",\"name\":\"SAVERA INDIAN. KITCHEN\",\"address\":\"5487 N MacArthur Blvd Irving TX 75038.\",\"orderWebsiteId\":{\"_id\":\"68e3ef20eb111c6b9fb9324b\",\"isEnable"
-[00:01:50.353] Server  LOG     [v0] API Proxy GET response: "{\"success\":true,\"data\":[{\"_id\":\"68c32f4ea424a04dd9a798d3\",\"name\":\"Biryani's\",\"storeId\":\"68c328b7a277614f117d8226\",\"createdAt\":\"2025-09-11T20:21:34.879Z\",\"__v\":0},{\"_id\":\"68c32f4ea424a04dd9a798dd\",\"nam"
-[00:01:50.377] Server  LOG     [v0] API Proxy GET: "https://api.livedatanow.com/api/online-order/department?storeId=68c328b7a277614f117d8226&page=1&limit=50"
-[00:01:51.842] Server  LOG     [v0] API Proxy GET response: "{\"success\":true,\"data\":[{\"_id\":\"68c32f4ea424a04dd9a798d3\",\"name\":\"Biryani's\",\"storeId\":\"68c328b7a277614f117d8226\",\"createdAt\":\"2025-09-11T20:21:34.879Z\",\"__v\":0},{\"_id\":\"68c32f4ea424a04dd9a798dd\",\"nam"
-[00:02:08.941] Server  LOG     [v0] API Proxy GET: "https://api.livedatanow.com/api/online-order/product?storeId=68c328b7a277614f117d8226&page=1&limit=1000&order=desc"
-[00:02:09.193] Server  LOG     [v0] API Proxy GET: "https://api.livedatanow.com/api/online-order/product?storeId=68c328b7a277614f117d8226&page=1&limit=100&order=desc"
-[00:02:09.201] Server  LOG     [v0] API Proxy GET: "https://api.livedatanow.com/api/online-order/product?storeId=68c328b7a277614f117d8226&page=1&limit=1000&order=desc"
-[00:02:15.227] Server  LOG     [v0] API Proxy GET response: "{\"products\":[{\"_id\":\"68c86e3d6a855d28046a5128\",\"name\":\"Punugullu 100\",\"price\":\"36.00\",\"priceAfterTax\":\"40.00\",\"priceYouCharge\":\"40\",\"tax\":\"0\",\"taxType\":\"direct\",\"description\":\"Appetizers\",\"stock\":-137"
-[00:02:20.740] Server  LOG     [v0] API Proxy GET response: "{\"products\":[{\"_id\":\"68c86e3d6a855d28046a5128\",\"name\":\"Punugullu 100\",\"price\":\"36.00\",\"priceAfterTax\":\"40.00\",\"priceYouCharge\":\"40\",\"tax\":\"0\",\"taxType\":\"direct\",\"description\":\"Appetizers\",\"stock\":-137"
-[00:03:59.803] Server  LOG     [v0] API Proxy GET response: "{\"products\":[{\"_id\":\"68c86e3d6a855d28046a5128\",\"name\":\"Punugullu 100\",\"price\":\"36.00\",\"priceAfterTax\":\"40.00\",\"priceYouCharge\":\"40\",\"tax\":\"0\",\"taxType\":\"direct\",\"description\":\"Appetizers\",\"stock\":-136"
-[00:06:18.995] Server  LOG     [v0] API Proxy GET response: "{\"products\":[{\"_id\":\"68c86e3d6a855d28046a5128\",\"name\":\"Punugullu 100\",\"price\":\"36.00\",\"priceAfterTax\":\"40.00\",\"priceYouCharge\":\"40\",\"tax\":\"0\",\"taxType\":\"direct\",\"description\":\"Appetizers\",\"stock\":-137"
-[00:06:24.112] Server  LOG     [v0] API Proxy GET response: "{\"products\":[{\"_id\":\"68c86e3d6a855d28046a5128\",\"name\":\"Punugullu 100\",\"price\":\"36.00\",\"priceAfterTax\":\"40.00\",\"priceYouCharge\":\"40\",\"tax\":\"0\",\"taxType\":\"direct\",\"description\":\"Appetizers\",\"stock\":-137"
-[00:33:32.848] Server  LOG     [v0] API Proxy GET: "https://api.livedatanow.com/api/online-order/product/68c86e3d6a855d28046a5129"
-[00:33:32.951] Browser WARN    Warning: Missing `Description` or `aria-describedby={undefined}` for {DialogContent}.
-[00:33:32.951] Browser WARN    Warning: Missing `Description` or `aria-describedby={undefined}` for {DialogContent}.
-[00:33:33.770] Server  LOG     [v0] API Proxy GET response: "{\"_id\":\"68c86e3d6a855d28046a5129\",\"name\":\"Masala Vada 4pcs\",\"price\":\"5.99\",\"priceAfterTax\":\"6.48\",\"priceYouCharge\":\"5.99\",\"tax\":\"8.25\",\"taxType\":\"direct\",\"description\":\"Appetizers\",\"stock\":-18,\"sku\":\""
-[00:33:33.811] Server  LOG     [v0] API Proxy GET: "https://api.livedatanow.com/api/online-order/modifier?page=1&limit=50&modifierGroupId=%5Bobject+Object%5D"
-[00:33:34.025] Server  ERROR   [v0] API Proxy GET error: "Cast to ObjectId failed for value \"[object Object]\" (type string) at path \"_id\" for model \"ModifierGroup\""
-[00:33:34.143] Browser ERROR   [v0] API request failed: {}
-[00:33:34.143] Browser ERROR   Error loading modifiers: {}
-[00:33:47.056] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
-[00:33:47.408] Server  LOG     [v0] API Proxy GET: "https://api.livedatanow.com/api/online-order/store/by-subdomain?hostname=savera"
-[00:33:47.499] Browser LOG     %c[Vercel Web Analytics]%c Debug mode is enabled by default in development. No requests will be sent to the server. color: rgb(120, 120, 120) color: inherit
-[00:33:47.499] Browser LOG     %c[Vercel Web Analytics]%c Running queued event color: rgb(120, 120, 120) color: inherit pageview {"path":"/","route":"/"}
-[00:33:47.499] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://192.168.18.227:3000/ color: rgb(120, 120, 120) color: inherit {"dp":"/","o":"http://192.168.18.227:3000/","r":"","sdkn":"@vercel/analytics/next","sdkv":"1.3.1","sv":"0.1.3","ts":1769189109504}
-[00:33:48.357] Server  LOG     [v0] API Proxy GET response: "{\"success\":true,\"data\":{\"_id\":\"68c328b7a277614f117d8226\",\"name\":\"SAVERA INDIAN. KITCHEN\",\"address\":\"5487 N MacArthur Blvd Irving TX 75038.\",\"orderWebsiteId\":{\"_id\":\"68e3ef20eb111c6b9fb9324b\",\"isEnable"
-[00:33:48.441] Server  LOG     [v0] API Proxy GET: "https://api.livedatanow.com/api/online-order/department?storeId=68c328b7a277614f117d8226&page=1&limit=50"
-[00:33:48.452] Server  LOG     [v0] API Proxy GET: "https://api.livedatanow.com/api/online-order/product?storeId=68c328b7a277614f117d8226&page=1&limit=100&order=desc"
-[00:33:48.468] Server  LOG     [v0] API Proxy GET: "https://api.livedatanow.com/api/online-order/product?storeId=68c328b7a277614f117d8226&page=1&limit=1000&order=desc"
-[00:33:48.682] Server  LOG     [v0] API Proxy GET response: "{\"success\":true,\"data\":[{\"_id\":\"68c32f4ea424a04dd9a798d3\",\"name\":\"Biryani's\",\"storeId\":\"68c328b7a277614f117d8226\",\"createdAt\":\"2025-09-11T20:21:34.879Z\",\"__v\":0},{\"_id\":\"68c32f4ea424a04dd9a798dd\",\"nam"
-[00:33:55.547] Server  LOG     [v0] API Proxy GET response: "{\"products\":[{\"_id\":\"68c86e3d6a855d28046a5128\",\"name\":\"Punugullu 100\",\"price\":\"36.00\",\"priceAfterTax\":\"40.00\",\"priceYouCharge\":\"40\",\"tax\":\"0\",\"taxType\":\"direct\",\"description\":\"Appetizers\",\"stock\":-137"
-[00:34:19.313] Server  LOG     [v0] API Proxy GET response: "{\"products\":[{\"_id\":\"68c86e3d6a855d28046a5128\",\"name\":\"Punugullu 100\",\"price\":\"36.00\",\"priceAfterTax\":\"40.00\",\"priceYouCharge\":\"40\",\"tax\":\"0\",\"taxType\":\"direct\",\"description\":\"Appetizers\",\"stock\":-137"
+[00:00:02.228] Server  LOG      ✓ Ready in 1486ms
+[00:00:05.341] Server  LOG      ○ Compiling / ...
+[00:00:10.427] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:00:10.842] Browser LOG     %c[Vercel Web Analytics]%c Debug mode is enabled by default in development. No requests will be sent to the server. color: rgb(120, 120, 120) color: inherit
+[00:00:10.842] Browser LOG     %c[Vercel Web Analytics]%c Running queued event color: rgb(120, 120, 120) color: inherit pageview {"path":"/","route":"/"}
+[00:00:10.842] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/ color: rgb(120, 120, 120) color: inherit {"dp":"/","o":"http://localhost:3000/","r":"","sdkn":"@vercel/analytics/next","sdkv":"1.3.1","sv":"0.1.3","ts":1769198728106}
+[00:00:11.028] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:00:11.994] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:00:11.999] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:00:12.464] Server  LOG     [v0] API Proxy GET: "https://api.livedatanow.com/api/online-order/store/by-subdomain?hostname=savera"
+[00:00:12.677] Browser LOG     %c[Vercel Web Analytics]%c Debug mode is enabled by default in development. No requests will be sent to the server. color: rgb(120, 120, 120) color: inherit
+[00:00:12.677] Browser LOG     %c[Vercel Web Analytics]%c Running queued event color: rgb(120, 120, 120) color: inherit pageview {"path":"/","route":"/"}
+[00:00:12.677] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/ color: rgb(120, 120, 120) color: inherit {"dp":"/","o":"http://localhost:3000/","r":"","sdkn":"@vercel/analytics/next","sdkv":"1.3.1","sv":"0.1.3","ts":1769198729939}
+[00:00:12.710] Browser LOG     %c[Vercel Web Analytics]%c Debug mode is enabled by default in development. No requests will be sent to the server. color: rgb(120, 120, 120) color: inherit
+[00:00:12.710] Browser LOG     %c[Vercel Web Analytics]%c Running queued event color: rgb(120, 120, 120) color: inherit pageview {"path":"/","route":"/"}
+[00:00:12.710] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/ color: rgb(120, 120, 120) color: inherit {"dp":"/","o":"http://localhost:3000/","r":"","sdkn":"@vercel/analytics/next","sdkv":"1.3.1","sv":"0.1.3","ts":1769198729974}
+[00:00:12.862] Browser LOG     %c[Vercel Web Analytics]%c Debug mode is enabled by default in development. No requests will be sent to the server. color: rgb(120, 120, 120) color: inherit
+[00:00:12.862] Browser LOG     %c[Vercel Web Analytics]%c Running queued event color: rgb(120, 120, 120) color: inherit pageview {"path":"/","route":"/"}
+[00:00:12.862] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/ color: rgb(120, 120, 120) color: inherit {"dp":"/","o":"http://localhost:3000/","sdkn":"@vercel/analytics/next","sdkv":"1.3.1","sv":"0.1.3","ts":1769198730126}
+[00:00:12.989] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:00:13.080] Server  LOG     [v0] API Proxy GET response: "{\"success\":true,\"data\":{\"_id\":\"68c328b7a277614f117d8226\",\"name\":\"SAVERA INDIAN. KITCHEN\",\"address\":\"5487 N MacArthur Blvd Irving TX 75038.\",\"orderWebsiteId\":{\"_id\":\"68e3ef20eb111c6b9fb9324b\",\"isEnable"
+[00:00:13.143] Server  LOG     [v0] API Proxy GET: "https://api.livedatanow.com/api/online-order/store/by-subdomain?hostname=savera"
+[00:00:13.270] Server  LOG     [v0] API Proxy GET response: "{\"success\":true,\"data\":{\"_id\":\"68c328b7a277614f117d8226\",\"name\":\"SAVERA INDIAN. KITCHEN\",\"address\":\"5487 N MacArthur Blvd Irving TX 75038.\",\"orderWebsiteId\":{\"_id\":\"68e3ef20eb111c6b9fb9324b\",\"isEnable"
+[00:00:13.335] Server  LOG     [v0] API Proxy GET: "https://api.livedatanow.com/api/online-order/department?storeId=68c328b7a277614f117d8226&page=1&limit=50"
+[00:00:13.369] Server  LOG     [v0] API Proxy GET: "https://api.livedatanow.com/api/online-order/product?storeId=68c328b7a277614f117d8226&page=1&limit=100&order=desc"
+[00:00:13.387] Server  LOG     [v0] API Proxy GET: "https://api.livedatanow.com/api/online-order/product?storeId=68c328b7a277614f117d8226&page=1&limit=1000&order=desc"
+[00:00:13.422] Server  LOG     [v0] API Proxy GET: "https://api.livedatanow.com/api/online-order/store/by-subdomain?hostname=savera"
+[00:00:13.437] Server  LOG     [v0] API Proxy GET: "https://api.livedatanow.com/api/online-order/store/by-subdomain?hostname=savera"
+[00:00:13.463] Server  LOG     [v0] API Proxy GET response: "{\"success\":true,\"data\":[{\"_id\":\"68c32f4ea424a04dd9a798d3\",\"name\":\"Biryani's\",\"storeId\":\"68c328b7a277614f117d8226\",\"createdAt\":\"2025-09-11T20:21:34.879Z\",\"__v\":0},{\"_id\":\"68c32f4ea424a04dd9a798dd\",\"nam"
+[00:00:13.719] Server  LOG     [v0] API Proxy GET: "https://api.livedatanow.com/api/online-order/department?storeId=68c328b7a277614f117d8226&page=1&limit=50"
+[00:00:13.981] Browser ERROR   A tree hydrated but some attributes of the server rendered HTML didn't match the client properties. This won't be patched up. This can happen if a SSR-ed Client Component used:
+
+- A server/client branch `if (typeof window !== 'undefined')`.
+- Variable input such as `Date.now()` or `Math.random()` which changes each time it's called.
+- Date formatting in a user's locale which doesn't match the server.
+- External changing data without sending a snapshot of it along with the HTML.
+- Invalid HTML tag nesting.
+
+It can also happen if the client has a browser extension installed which messes with the HTML before React loaded.
+
+%s%s https://react.dev/link/hydration-mismatch 
+
+  ...
+    <HotReload globalError={[...]} webSocket={WebSocket} staticIndicatorState={{pathname:null, ...}}>
+      <AppDevOverlayErrorBoundary globalError={[...]}>
+        <ReplaySsrOnlyErrors>
+        <DevRootHTTPAccessFallbackBoundary>
+          <HTTPAccessFallbackBoundary notFound={<NotAllowedRootHTTPFallbackError>}>
+            <HTTPAccessFallbackErrorBoundary pathname="/" notFound={<NotAllowedRootHTTPFallbackError>} ...>
+              <RedirectBoundary>
+                <RedirectErrorBoundary router={{...}}>
+                  <Head headCacheNode={{lazyData:null, ...}}>
+                    <__next_viewport_boundary__>
+                    <Next.Metadata>
+                      <div
+                        hidden={true}
+-                       bis_skin_checked="1"
+                      >
+                    ...
+                  <__next_root_layout_boundary__>
+                    <SegmentViewNode type="layout" pagePath="layout.tsx">
+                      <SegmentTrieNode>
+                      <link>
+                      <script>
+                      <script>
+                      <script>
+                      <RootLayout>
+                        <html lang="en">
+                          <body
+                            className="font-sans antialiased"
+-                           __processed_ce12600a-c614-43fb-a866-6d5e1b366a8c__="true"
+-                           bis_register="W3sibWFzdGVyIjp0cnVlLCJleHRlbnNpb25JZCI6ImVwcGlvY2VtaG1ubGJoanBsY2drb2ZjaWll..."
+                          >
+                            <OuterLayoutRouter>
+                            ...
+                              <ToastViewport ref={null} className="fixed top-...">
+                                <DismissableLayerBranch ref={{current:null}} role="region" aria-label="Notificati..." ...>
+                                  <Primitive.div role="region" aria-label="Notificati..." tabIndex={-1} style={{...}} ...>
+                                    <div
+                                      role="region"
+                                      aria-label="Notifications (F8)"
+                                      tabIndex={-1}
+                                      style={{pointerEvents:"none"}}
+                                      ref={function}
+-                                     bis_skin_checked="1"
+                                    >
+                            ...
+                  ...
+
+[00:00:13.981] Browser ERROR   A tree hydrated but some attributes of the server rendered HTML didn't match the client properties. This won't be patched up. This can happen if a SSR-ed Client Component used:
+
+- A server/client branch `if (typeof window !== 'undefined')`.
+- Variable input such as `Date.now()` or `Math.random()` which changes each time it's called.
+- Date formatting in a user's locale which doesn't match the server.
+- External changing data without sending a snapshot of it along with the HTML.
+- Invalid HTML tag nesting.
+
+It can also happen if the client has a browser extension installed which messes with the HTML before React loaded.
+
+%s%s https://react.dev/link/hydration-mismatch 
+
+  ...
+    <ErrorBoundary errorComponent={undefined} errorStyles={undefined} errorScripts={undefined}>
+      <LoadingBoundary name="/" loading={null}>
+        <HTTPAccessFallbackBoundary notFound={<SegmentViewNode>} forbidden={undefined} unauthorized={undefined}>
+          <HTTPAccessFallbackErrorBoundary pathname="/" notFound={<SegmentViewNode>} forbidden={undefined} ...>
+            <RedirectBoundary>
+              <RedirectErrorBoundary router={{...}}>
+                <InnerLayoutRouter url="/" tree={[...]} params={{}} cacheNode={{lazyData:null, ...}} segmentPath={[...]} ...>
+                  <SegmentViewNode type="page" pagePath="page.tsx">
+                    <SegmentTrieNode>
+                    <ClientPageRoot Component={function HomePage} serverProvidedParams={{...}}>
+                      <HomePage params={Promise} searchParams={Promise}>
+                        <Suspense fallback={<div>}>
+                          <HomePageContent>
+                            <div
+                              className="flex min-h-screen items-center justify-center"
+-                             bis_skin_checked="1"
+                            >
+                  ...
+                ...
+
+[00:00:13.981] Browser LOG     %c[Vercel Web Analytics]%c Debug mode is enabled by default in development. No requests will be sent to the server. color: rgb(120, 120, 120) color: inherit
+[00:00:13.981] Browser LOG     %c[Vercel Web Analytics]%c Running queued event color: rgb(120, 120, 120) color: inherit pageview {"path":"/","route":"/"}
+[00:00:13.982] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/ color: rgb(120, 120, 120) color: inherit {"dp":"/","o":"http://localhost:3000/","sdkn":"@vercel/analytics/next","sdkv":"1.3.1","sv":"0.1.3","ts":1769198730513}
+[00:00:14.222] Server  LOG     [v0] API Proxy GET response: "{\"success\":true,\"data\":{\"_id\":\"68c328b7a277614f117d8226\",\"name\":\"SAVERA INDIAN. KITCHEN\",\"address\":\"5487 N MacArthur Blvd Irving TX 75038.\",\"orderWebsiteId\":{\"_id\":\"68e3ef20eb111c6b9fb9324b\",\"isEnable"
+[00:00:14.231] Server  LOG     [v0] API Proxy GET response: "{\"success\":true,\"data\":[{\"_id\":\"68c32f4ea424a04dd9a798d3\",\"name\":\"Biryani's\",\"storeId\":\"68c328b7a277614f117d8226\",\"createdAt\":\"2025-09-11T20:21:34.879Z\",\"__v\":0},{\"_id\":\"68c32f4ea424a04dd9a798dd\",\"nam"
+[00:00:14.259] Server  LOG     [v0] API Proxy GET: "https://api.livedatanow.com/api/online-order/store/by-subdomain?hostname=savera"
+[00:00:14.407] Server  LOG     [v0] API Proxy GET response: "{\"success\":true,\"data\":{\"_id\":\"68c328b7a277614f117d8226\",\"name\":\"SAVERA INDIAN. KITCHEN\",\"address\":\"5487 N MacArthur Blvd Irving TX 75038.\",\"orderWebsiteId\":{\"_id\":\"68e3ef20eb111c6b9fb9324b\",\"isEnable"
+[00:00:14.414] Server  LOG     [v0] API Proxy GET response: "{\"success\":true,\"data\":{\"_id\":\"68c328b7a277614f117d8226\",\"name\":\"SAVERA INDIAN. KITCHEN\",\"address\":\"5487 N MacArthur Blvd Irving TX 75038.\",\"orderWebsiteId\":{\"_id\":\"68e3ef20eb111c6b9fb9324b\",\"isEnable"
+[00:00:14.511] Server  LOG     [v0] API Proxy GET: "https://api.livedatanow.com/api/online-order/department?storeId=68c328b7a277614f117d8226&page=1&limit=50"
+[00:00:14.520] Server  LOG     [v0] API Proxy GET: "https://api.livedatanow.com/api/online-order/product?storeId=68c328b7a277614f117d8226&page=1&limit=100&order=desc"
+[00:00:14.531] Server  LOG     [v0] API Proxy GET: "https://api.livedatanow.com/api/online-order/product?storeId=68c328b7a277614f117d8226&page=1&limit=1000&order=desc"
+[00:00:14.584] Server  LOG     [v0] API Proxy GET: "https://api.livedatanow.com/api/online-order/department?storeId=68c328b7a277614f117d8226&page=1&limit=50"
+[00:00:14.634] Server  LOG     [v0] API Proxy GET response: "{\"success\":true,\"data\":[{\"_id\":\"68c32f4ea424a04dd9a798d3\",\"name\":\"Biryani's\",\"storeId\":\"68c328b7a277614f117d8226\",\"createdAt\":\"2025-09-11T20:21:34.879Z\",\"__v\":0},{\"_id\":\"68c32f4ea424a04dd9a798dd\",\"nam"
+[00:00:14.712] Server  LOG     [v0] API Proxy GET response: "{\"products\":[{\"_id\":\"68c86e3d6a855d28046a5128\",\"name\":\"Punugullu 100\",\"price\":\"36.00\",\"priceAfterTax\":\"40.00\",\"priceYouCharge\":\"40\",\"tax\":\"0\",\"taxType\":\"direct\",\"description\":\"Appetizers\",\"stock\":-137"
+[00:00:14.745] Server  LOG     [v0] API Proxy GET: "https://api.livedatanow.com/api/online-order/product?storeId=68c328b7a277614f117d8226&page=1&limit=100&order=desc"
+[00:00:15.344] Server  LOG     [v0] API Proxy GET response: "{\"success\":true,\"data\":[{\"_id\":\"68c32f4ea424a04dd9a798d3\",\"name\":\"Biryani's\",\"storeId\":\"68c328b7a277614f117d8226\",\"createdAt\":\"2025-09-11T20:21:34.879Z\",\"__v\":0},{\"_id\":\"68c32f4ea424a04dd9a798dd\",\"nam"
+[00:00:15.524] Server  LOG     [v0] API Proxy GET: "https://api.livedatanow.com/api/online-order/product?storeId=68c328b7a277614f117d8226&page=1&limit=100&order=desc"
+[00:00:15.613] Server  LOG     [v0] API Proxy GET response: "{\"products\":[{\"_id\":\"68c86e3d6a855d28046a5128\",\"name\":\"Punugullu 100\",\"price\":\"36.00\",\"priceAfterTax\":\"40.00\",\"priceYouCharge\":\"40\",\"tax\":\"0\",\"taxType\":\"direct\",\"description\":\"Appetizers\",\"stock\":-137"
+[00:00:15.645] Server  LOG     [v0] API Proxy GET response: "{\"products\":[{\"_id\":\"68c86e3d6a855d28046a5128\",\"name\":\"Punugullu 100\",\"price\":\"36.00\",\"priceAfterTax\":\"40.00\",\"priceYouCharge\":\"40\",\"tax\":\"0\",\"taxType\":\"direct\",\"description\":\"Appetizers\",\"stock\":-137"
+[00:00:15.696] Server  LOG     [v0] API Proxy GET: "https://api.livedatanow.com/api/online-order/product?storeId=68c328b7a277614f117d8226&page=1&limit=1000&order=desc"
+[00:00:15.894] Server  LOG     [v0] API Proxy GET response: "{\"products\":[{\"_id\":\"68c86e3d6a855d28046a5128\",\"name\":\"Punugullu 100\",\"price\":\"36.00\",\"priceAfterTax\":\"40.00\",\"priceYouCharge\":\"40\",\"tax\":\"0\",\"taxType\":\"direct\",\"description\":\"Appetizers\",\"stock\":-137"
+[00:00:16.128] Server  LOG     [v0] API Proxy GET response: "{\"products\":[{\"_id\":\"68c86e3d6a855d28046a5128\",\"name\":\"Punugullu 100\",\"price\":\"36.00\",\"priceAfterTax\":\"40.00\",\"priceYouCharge\":\"40\",\"tax\":\"0\",\"taxType\":\"direct\",\"description\":\"Appetizers\",\"stock\":-137"
+[00:00:16.858] Server  LOG     [v0] API Proxy GET response: "{\"products\":[{\"_id\":\"68c86e3d6a855d28046a5128\",\"name\":\"Punugullu 100\",\"price\":\"36.00\",\"priceAfterTax\":\"40.00\",\"priceYouCharge\":\"40\",\"tax\":\"0\",\"taxType\":\"direct\",\"description\":\"Appetizers\",\"stock\":-137"
+[00:00:17.281] Server  LOG     [v0] API Proxy GET response: "{\"products\":[{\"_id\":\"68c86e3d6a855d28046a5128\",\"name\":\"Punugullu 100\",\"price\":\"36.00\",\"priceAfterTax\":\"40.00\",\"priceYouCharge\":\"40\",\"tax\":\"0\",\"taxType\":\"direct\",\"description\":\"Appetizers\",\"stock\":-137"
+[00:03:11.963] Server  LOG      ✓ Compiled in 150ms
+[00:03:30.416] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:03:31.047] Server  LOG     [v0] API Proxy GET: "https://api.livedatanow.com/api/online-order/store/by-subdomain?hostname=savera"
+[00:03:31.132] Browser ERROR   A tree hydrated but some attributes of the server rendered HTML didn't match the client properties. This won't be patched up. This can happen if a SSR-ed Client Component used:
+
+- A server/client branch `if (typeof window !== 'undefined')`.
+- Variable input such as `Date.now()` or `Math.random()` which changes each time it's called.
+- Date formatting in a user's locale which doesn't match the server.
+- External changing data without sending a snapshot of it along with the HTML.
+- Invalid HTML tag nesting.
+
+It can also happen if the client has a browser extension installed which messes with the HTML before React loaded.
+
+%s%s https://react.dev/link/hydration-mismatch 
+
+  ...
+    <HotReload globalError={[...]} webSocket={WebSocket} staticIndicatorState={{pathname:null, ...}}>
+      <AppDevOverlayErrorBoundary globalError={[...]}>
+        <ReplaySsrOnlyErrors>
+        <DevRootHTTPAccessFallbackBoundary>
+          <HTTPAccessFallbackBoundary notFound={<NotAllowedRootHTTPFallbackError>}>
+            <HTTPAccessFallbackErrorBoundary pathname="/" notFound={<NotAllowedRootHTTPFallbackError>} ...>
+              <RedirectBoundary>
+                <RedirectErrorBoundary router={{...}}>
+                  <Head>
+                  <__next_root_layout_boundary__>
+                    <SegmentViewNode type="layout" pagePath="layout.tsx">
+                      <SegmentTrieNode>
+                      <link>
+                      <script>
+                      <script>
+                      <script>
+                      <RootLayout>
+                        <html lang="en">
+                          <body
+                            className="font-sans antialiased"
+-                           bis_register="W3sibWFzdGVyIjp0cnVlLCJleHRlbnNpb25JZCI6ImVwcGlvY2VtaG1ubGJoanBsY2drb2ZjaWll..."
+-                           __processed_ec8d8aeb-2a2f-452d-a016-ed7d0bde4351__="true"
+                          >
+                            <OuterLayoutRouter>
+                            ...
+                              <ToastViewport ref={null} className="fixed top-...">
+                                <DismissableLayerBranch ref={{current:null}} role="region" aria-label="Notificati..." ...>
+                                  <Primitive.div role="region" aria-label="Notificati..." tabIndex={-1} style={{...}} ...>
+                                    <div
+                                      role="region"
+                                      aria-label="Notifications (F8)"
+                                      tabIndex={-1}
+                                      style={{pointerEvents:"none"}}
+                                      ref={function}
+-                                     bis_skin_checked="1"
+                                    >
+                            ...
+                  ...
+
+[00:03:31.132] Browser ERROR   A tree hydrated but some attributes of the server rendered HTML didn't match the client properties. This won't be patched up. This can happen if a SSR-ed Client Component used:
+
+- A server/client branch `if (typeof window !== 'undefined')`.
+- Variable input such as `Date.now()` or `Math.random()` which changes each time it's called.
+- Date formatting in a user's locale which doesn't match the server.
+- External changing data without sending a snapshot of it along with the HTML.
+- Invalid HTML tag nesting.
+
+It can also happen if the client has a browser extension installed which messes with the HTML before React loaded.
+
+%s%s https://react.dev/link/hydration-mismatch 
+
+  ...
+    <ErrorBoundary errorComponent={undefined} errorStyles={undefined} errorScripts={undefined}>
+      <LoadingBoundary name="/" loading={null}>
+        <HTTPAccessFallbackBoundary notFound={<SegmentViewNode>} forbidden={undefined} unauthorized={undefined}>
+          <HTTPAccessFallbackErrorBoundary pathname="/" notFound={<SegmentViewNode>} forbidden={undefined} ...>
+            <RedirectBoundary>
+              <RedirectErrorBoundary router={{...}}>
+                <InnerLayoutRouter url="/" tree={[...]} params={{}} cacheNode={{lazyData:null, ...}} segmentPath={[...]} ...>
+                  <SegmentViewNode type="page" pagePath="page.tsx">
+                    <SegmentTrieNode>
+                    <ClientPageRoot Component={function HomePage} serverProvidedParams={{...}}>
+                      <HomePage params={Promise} searchParams={Promise}>
+                        <Suspense fallback={<div>}>
+                          <HomePageContent>
+                            <div
+                              className="flex min-h-screen items-center justify-center"
+-                             bis_skin_checked="1"
+                            >
+                  ...
+                ...
+
+[00:03:31.132] Browser LOG     %c[Vercel Web Analytics]%c Debug mode is enabled by default in development. No requests will be sent to the server. color: rgb(120, 120, 120) color: inherit
+[00:03:31.132] Browser LOG     %c[Vercel Web Analytics]%c Running queued event color: rgb(120, 120, 120) color: inherit pageview {"path":"/","route":"/"}
+[00:03:31.132] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/ color: rgb(120, 120, 120) color: inherit {"dp":"/","o":"http://localhost:3000/","sdkn":"@vercel/analytics/next","sdkv":"1.3.1","sv":"0.1.3","ts":1769198928395}
+[00:03:31.599] Server  LOG     [v0] API Proxy GET response: "{\"success\":true,\"data\":{\"_id\":\"68c328b7a277614f117d8226\",\"name\":\"SAVERA INDIAN. KITCHEN\",\"address\":\"5487 N MacArthur Blvd Irving TX 75038.\",\"orderWebsiteId\":{\"_id\":\"68e3ef20eb111c6b9fb9324b\",\"isEnable"
+[00:03:31.703] Server  LOG     [v0] API Proxy GET: "https://api.livedatanow.com/api/online-order/department?storeId=68c328b7a277614f117d8226&page=1&limit=50"
+[00:03:31.711] Server  LOG     [v0] API Proxy GET: "https://api.livedatanow.com/api/online-order/product?storeId=68c328b7a277614f117d8226&page=1&limit=100&order=desc"
+[00:03:31.732] Server  LOG     [v0] API Proxy GET: "https://api.livedatanow.com/api/online-order/product?storeId=68c328b7a277614f117d8226&page=1&limit=1000&order=desc"
+[00:03:31.827] Server  LOG     [v0] API Proxy GET response: "{\"success\":true,\"data\":[{\"_id\":\"68c32f4ea424a04dd9a798d3\",\"name\":\"Biryani's\",\"storeId\":\"68c328b7a277614f117d8226\",\"createdAt\":\"2025-09-11T20:21:34.879Z\",\"__v\":0},{\"_id\":\"68c32f4ea424a04dd9a798dd\",\"nam"
+[00:03:32.954] Server  LOG     [v0] API Proxy GET response: "{\"products\":[{\"_id\":\"68c86e3d6a855d28046a5128\",\"name\":\"Punugullu 100\",\"price\":\"36.00\",\"priceAfterTax\":\"40.00\",\"priceYouCharge\":\"40\",\"tax\":\"0\",\"taxType\":\"direct\",\"description\":\"Appetizers\",\"stock\":-137"
+[00:03:33.663] Server  LOG     [v0] API Proxy GET response: "{\"products\":[{\"_id\":\"68c86e3d6a855d28046a5128\",\"name\":\"Punugullu 100\",\"price\":\"36.00\",\"priceAfterTax\":\"40.00\",\"priceYouCharge\":\"40\",\"tax\":\"0\",\"taxType\":\"direct\",\"description\":\"Appetizers\",\"stock\":-137"
