@@ -1,6 +1,6 @@
 "use client"
 
-import { useState, useEffect } from "react"
+import { useState, useEffect, useRef } from "react"
 import { useRouter } from "next/navigation"
 import { Header } from "@/components/header"
 import { Button } from "@/components/ui/button"
@@ -25,6 +25,7 @@ export default function CheckoutPage() {
   const [orderType, setOrderType] = useState<"WEB_PICKUP" | "WEB_DELIVERY">("WEB_PICKUP")
   const [paymentMethod, setPaymentMethod] = useState<"cash" | "card">("cash")
   const [isPlacingOrder, setIsPlacingOrder] = useState(false)
+  const isPlacingOrderRef = useRef(false)
   const [authDialogOpen, setAuthDialogOpen] = useState(false)
   const [cardDetails, setCardDetails] = useState({
     cardNumber: "",
@@ -45,8 +46,20 @@ export default function CheckoutPage() {
   }, [cart.items.length])
 
   const handlePlaceOrder = async () => {
+    if (isPlacingOrderRef.current) {
+      return
+    }
+    isPlacingOrderRef.current = true
+    setIsPlacingOrder(true)
+
+    const resetPlacingOrder = () => {
+      isPlacingOrderRef.current = false
+      setIsPlacingOrder(false)
+    }
+
     if (!isAuthenticated) {
       setAuthDialogOpen(true)
+      resetPlacingOrder()
       return
     }
 
@@ -66,6 +79,7 @@ export default function CheckoutPage() {
         variant: "destructive",
       })
       router.push("/profile")
+      resetPlacingOrder()
       return
     }
 
@@ -91,6 +105,7 @@ export default function CheckoutPage() {
         variant: "destructive",
       })
       router.push("/profile")
+      resetPlacingOrder()
       return
     }
 
@@ -102,13 +117,12 @@ export default function CheckoutPage() {
           description: "Please fill in all card details.",
           variant: "destructive",
         })
+        resetPlacingOrder()
         return
       }
     }
 
     try {
-      setIsPlacingOrder(true)
-
       const orderItems = cart.items.map((item) => ({
         discount: item.discount,
         modifiers: item.modifiers.map((mod) => ({
@@ -180,7 +194,7 @@ export default function CheckoutPage() {
         variant: "destructive",
       })
     } finally {
-      setIsPlacingOrder(false)
+      resetPlacingOrder()
     }
   }
 
